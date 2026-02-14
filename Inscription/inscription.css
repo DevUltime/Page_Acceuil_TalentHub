@@ -1,0 +1,355 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* gestio des elements globaux*/
+body{
+    overflow-x: hidden;
+    font-family: 'poppins',sans-serif;
+   /* background: linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);*/
+}
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* gestion de l'en-tete de la page*/
+header{
+    font-size: 12px;
+    position: sticky;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    box-shadow: 0 1px 5px rgb(195, 195, 195);
+    align-items: center;
+    z-index: 10;
+    background-color: white;
+    color: #1a8fbf;
+}
+.logo{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.logo img{
+    height: 70px;
+}
+.logo h1{
+    font-family: 'poppins',sans-serif;
+    font-weight: 600;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.nav_bar{
+    position: relative;
+    display: flex;
+}
+nav li{
+    position: relative;
+    display: flex;
+    list-style: none;
+}
+nav li ul{
+    padding: 2px 2px 0 0;
+    position: relative;
+    text-transform: capitalize;
+    margin-right: 15px;
+}
+/* animation des liens de la barre de navigation*/
+nav li ul::after{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 3px;
+    width: 0;
+    border-radius: 3px;
+    background-color: #50b5e8;
+    transition: .3s;
+}
+nav li ul:hover::after{
+    color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+/*gestion de la section contenant la box des informations*/
+section{
+    height: calc(100vh - 130px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* gestion de la page de connexion*/
+.connexion_page{
+    top: 13%;
+    left: 15%;
+    backdrop-filter: blur(50px);
+    z-index: 20;
+    position: fixed;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: calc(100vh - 20%);
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 1px 20px rgba(80,181,232,0.3);
+    transition: .4s;
+}
+.connexion_page form{
+    width: 50%;
+    display: flexbox;
+    flex-direction: row;
+}
+.connexion_page input{
+    padding: 0 7px 0 7px;
+    appearance: none;
+    width: 100%;
+    margin: 5px 0;
+    height: 27px;
+    border-radius: 6px;
+    transition: all .3s ease;
+    border: 1px solid #50b5e8;
+}
+@keyframes animationPageConnexion{
+    0%{
+        left: 50%;
+        top: 50%;
+        width: 0;
+        height: 0;
+    }
+    100%{
+    top: 13%;
+    left: 15%;
+    width: 70%;
+    height: calc(100vh - 20%);
+    }
+}
+
+/* appel de la fonction pour obtenir la page de connexion*/
+.connexionPage{
+    animation: animationPageConnexion .2s linear;
+    display: flex;
+}
+
+
+
+
+
+
+
+/*  box contenant les informations */
+.informations{
+    height: 410px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgb(195, 195, 195);
+    padding: 20px;
+            overflow-y: scroll;
+        scrollbar-width: none;
+}
+.informations h2{
+    position: relative;
+    top: -5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+form{
+    display: flexbox;
+    flex-direction: row;
+}
+input{
+    padding: 0 7px 0 7px;
+    appearance: none;
+    width: 100%;
+    margin: 5px 0;
+    height: 27px;
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 6px;
+    transition: all .3s ease;
+}
+input:focus{
+    outline: none;
+    box-shadow: .5px .5px 5px  rgba(80, 181, 232,0.5);
+    border: none;
+}
+label{
+    font-size: 12px;
+    text-transform: capitalize;
+}
+input[type="submit"]{
+    margin-top: 10px;
+    border: none;
+    color: white;
+    transition: 0.3s;
+    text-transform: capitalize;
+    text-decoration: none;
+    box-shadow: 0 1px 20px rgba(80,181,232,0.3);
+    background: linear-gradient(90deg,#50b5e8,#1a8fbf);
+    border-radius: 100px;
+}
+input[type="submit"]:hover{
+    opacity: 0.7;
+}
+.policy{
+    margin-top: 17px;
+    display: flex;
+    justify-content: space-between;
+}
+.policy a{
+    font-size: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .3s;
+}
+.policy a:hover{
+    color: #c3c3c3;
+}
+/* gestion du pied de la page*/
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: #50b5e8;
+    color: white;
+}
+footer p {
+    position: relative;
+    top: -5px;
+}
+footer nav a{
+    text-transform: capitalize;
+    color: white;
+    margin: 0 5px;
+    font-size: 11px;
+    transition: .3s;
+}
+footer nav a:hover{
+    color: #c3c3c3;
+}
+
+
+/* responsive design pour affichage tablette et mini-laptop*/
+@media screen and (max-width : 480px){
+        header nav{
+        display: none;
+    }
+    .first_bar{
+        height: 3px;
+        width: 25px;
+        border-radius: 10px;background-color: #082b39;;
+        box-shadow: 0 10px #082b39;
+        transition: .2s;
+    }
+    .second_bar{
+        margin-top: 17px;
+        height: 3px;
+        width: 25px;
+        border-radius: 10px;
+        background-color: #082b39;
+        transition: .2s;
+    }
+    .nav_bar{
+        position: absolute;
+        display: inline-block;
+        width: min-content;
+        right: 20px;
+    }
+    /* l'appel de la fonction "myFunction" javascript pour animer les barres horizontaux*/
+    .firstBar{
+        box-shadow: none;
+        transform: rotate(45deg);
+        background-color: #ff6b6b;
+    }
+    .secondBar{
+        background-color: #ff6b6b;
+        margin-top: -3px;
+        transform: rotate(-45deg);
+    }
+    .Navig{
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 2px;
+        height: 150px;
+        box-shadow: 0 1px 20px rgba(80,181,232,0.3);
+        border-radius: 10px;
+        background: #fff;
+        margin-right: 0;
+    }
+    .Navig li{
+        display: block;
+    }
+    .Navig li ul{
+        width: min-content;
+        padding: 5px 0 0 0;
+        display: block;
+        margin: 10px 20px;
+    }
+    header{
+        height: 50px;
+    }    
+    .logo img{
+    height: 50px;
+    }
+    .logo h1{
+        margin-left: 5px;
+        font-size: 13px;
+    }
+    footer{
+        height: 50px;
+        text-align: center;
+        font-size: 10px;
+    }
+    footer nav a{
+        font-size: 8px;
+    }
+    section{
+        height: calc(100vh - 110px);
+        padding-bottom: 10px;
+    }
+    .informations{
+        width: 85%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+    .informations h2{
+        font-size: 15px;
+
+    }
+    label{
+        font-size: 8px;
+        text-transform: capitalize;
+    }
+    .connexion_page{
+        left: 5%;
+        width: 90%;
+    }
+    .connexion_page form{
+    width: 90%;
+    }
+
+    .policy a{
+        font-size: 7px;
+
+    }
+}
+@media  screen and (max-height :560px ) {
+    .informations{
+        height: 90%;
+    }
+    input{
+        margin: 2px 0;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inscription.css">
+    <script src="scriptInscription.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>inscription</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../logo_talenthub.svg" alt="logo TalentHub">
+            <h1>TalentHub</h1>
+        </div>
+        <div class="nav_bar" onclick="myFunction()">
+            <nav class="navig">
+                <li>
+                    <ul><a href="../acceuil/index.html">acceuil</a></ul>
+                    <ul><a href="#" onclick="getConnexionPage()">connexion</a></ul>
+                    <ul><a href="#">aide</a></ul>
+                </li>
+            </nav>
+            <div class="first_bar"></div>
+            <div class="second_bar"></div>
+        </div>
+    </header>
+
+
+
+    <div class="connexion_page">
+        <form action="" method="post">
+            <label for="identifiant">Identifiant</label>
+            <input type="text" name="identifiant" id="identifiant">
+            <label for="mot_passe">Mot de passe</label>
+            <input type="password" name="mot_passe" id="mot_passe">
+            <input type="submit" value="Envoyer">
+        </form>
+    </div>
+
+
+
+    <main>
+        <section>
+            <div class="informations">
+                <h2>Créer un Compte</h2>
+                <form action="" method="get">
+                    <label for="nom">Nom complet</label>
+                    <input type="text" name="nom" id="nom">
+                    <label for="mail"> adresse email</label>
+                    <input type="email" name="mail" id="mail">
+                    <label for="nom_user">nom utilisateur</label>
+                    <input type="text" name="nom_user" id="nom_user">
+                    <label for="mot_passe">mot de passe</label>
+                    <input type="password" name="mot_passe" id="mot_passe">
+                    <input type="submit" value="s'inscrire">
+                </form>
+                <div class="policy">
+                    <a href="#">termes du service</a>
+                    <a href="#"> police de confidentialité</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>©️2026 TalentHub Tous les droits sont reservés</p>
+        <nav>
+            <a href="#">contactez-nous</a>
+            <a href="#">à propos de nous</a>
+            <a href="#">support</a>
+        </nav>
+    </footer>
+</body>
+</html>
