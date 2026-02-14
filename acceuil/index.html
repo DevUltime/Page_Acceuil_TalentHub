@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Acceuil</title>
+</head>
+<body>
+
+
+
+    <header>
+        <div class="logo">
+            <img src="../logo_talenthub.svg" alt="logo_talenthub">
+            <h1>TalentHub</h1>
+        </div>
+        <div class="nav_bar" onclick="myFunction()">
+            <nav class="navig">
+                <ul>
+                    <li><a href="index.html">acceuil</a></li>
+                    <li><a href="../inscription/inscription.html">inscription</a></li>
+                    <li><a href="#" onclick="getConnexionPage()">connexion</a></li>
+                </ul>
+                <div class="join_us">
+                    <a href="#">Join Us</a>
+                </div>
+            </nav>
+            <div class="first_bar"></div>
+            <div class="second_bar"></div>
+        </div>
+    </header>
+
+    <div class="connexion_page">
+        <form action="" method="post">
+            <label for="identifiant">Identifiant</label>
+            <input type="text" name="identifiant" id="identifiant">
+            <label for="mot_passe">Mot de passe</label>
+            <input type="password" name="mot_passe" id="mot_passe">
+            <input type="submit" value="Envoyer">
+        </form>
+    </div>
+
+
+
+    <main>
+        <section class="sec_princ">
+            <div class="div_msg">
+                <div class="msg">
+                    <h2><span>TalentHub:</span> trouvez les meilleurs talents pour vos projets</h2>
+                </div>
+                <div class="btn">
+                    <a href="#">Commencer</a>
+                    <a href="../inscription/inscription.html">Inscription</a>
+                </div>
+            </div>
+            <div class="illustration">
+            </div>
+        </section>
+
+
+        <section class="recommandation">
+                <p>pourquoi choisir <span>TalentHub</span>?</p>
+        </section>
+
+
+
+        <section class="sec_collab">
+            <div class="divImgcollab">
+                <!--<img src="collaboration.png" alt="image_collaboration">-->
+            </div>
+            <div class="msg_collab">
+                <div class="collaboration">🤝</div>
+                <h2>connexion Rapide</h2>
+                <p>Trouvez et connectez-vous intantanement avec les meilleurs talents dans votre domaine</p>
+            </div>
+        </section>
+        <section class="sec_security">
+            <div class="msg_security">
+                <div class="security">🔐</div>
+                <h2>Securité</h2>
+                <p>Vos données et transactions sont protégées par les meilleurs systèmes de sécurité</p>
+            </div>
+            <div class="divImgsecurity">
+                <!--<img src="security.png" alt="image_security">-->
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <p>©️2026 TalentHub Tous les droits sont reservés</p>
+        <nav>
+            <a href="#">contactez-nous</a>
+            <a href="#">à propos de nous</a>
+            <a href="#">support</a>
+        </nav>
+    </footer>
+</body>
+</html>
