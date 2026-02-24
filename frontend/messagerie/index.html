@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messagerie talenthub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="section-contact section-container flex-column">
+            <div class="contact-header">
+                <h1 class="contact-title entete-section">Messagerie</h1>
+            </div>
+            <div class="contact-list flex-column">
+                <!--le js se charge de tout-->
+            </div>
+        </section>
+        <section class="section-chat section-container flex-column">
+            <div class="chat-header  flex-row">
+                <span class="chat-close" onclick="closeChat()">
+                    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" />
+</svg>
+
+                </span>
+                <div class="chat-header-info flex-row">
+                    <!--le js se charge de tout-->
+                </div>
+                <div class="chat-option-menu">
+
+                </div>
+            </div>
+            <div class="chat-messages">
+
+            </div>
+            <div class="chat-input flex-row">
+                <textarea name="message" placeholder="message" rows="1" id="message-input"></textarea>
+                <span class="send-message">
+                    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" />
+</svg>
+
+                </span>
+            </div>
+        </section> 
+    </main>
+    <!--import du javascript de la messagerie-->
+    <script src="main.js"></script>
+</body>
+</html>

@@ -13,8 +13,8 @@
   --shadow-bottom: 0 5px 10px -5px;
  
   /*tailles de polices */
-  --text-principal: 25px;
-  --text-secondaire: 18px;
+  --text-principal: 22px;
+  --text-secondaire: 16px;
   --text-terciaire: 11px;
 
   /*longueur */
@@ -253,6 +253,7 @@ img{
 ///////////////////////////////////////////*/
 .section-a-propos{
     flex: 2 1 500px;
+    margin-top: 10px;
 }
 .a-propos-text{
     box-shadow: inset var(--shadow-all-around) rgba(121, 116, 116, 0.4);
@@ -519,6 +520,11 @@ img{
 //                media queries             //
 ///////////////////////////////////////////*/
 @media screen and (max-width: 1350px){
+    :root{
+        --text-principal: 20px;
+        --text-secondaire: 14px;
+        --text-terciaire: 9px;
+    }
     .stats-container{
         flex: 1 1 300px;
     }
@@ -540,7 +546,7 @@ img{
     :root{
         --text-principal: 20px;
         --text-secondaire: 13px;
-        --text-terciaire: 6px;
+        --text-terciaire: 7px;
     }
     svg{
         width: 20px;
@@ -573,6 +579,9 @@ img{
     }
     .section-container{
         box-shadow: none;
+    }
+    button{
+        max-width: 100px;
     }
     
 }
