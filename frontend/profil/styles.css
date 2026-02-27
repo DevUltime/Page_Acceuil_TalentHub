@@ -5,7 +5,7 @@
 :root {
   /*couleur*/
   --couleur-principale: 25, 177, 228;
-  --couleur-secondaire: rgb(121, 116, 116);
+  --couleur-secondaire: 121, 116, 116;
   --couleur-terciaire: rgb(5, 53, 77);
   
   /*ombre*/
@@ -69,17 +69,17 @@ img{
 }
 .btn-bad{
   background-color: transparent;
-  color: var(--couleur-secondaire);
-  border: 2px solid var(--couleur-secondaire);
+  color: rgba(var(--couleur-secondaire), 1);
+  border: 2px solid rgba(var(--couleur-secondaire), 1);
 }
 .btn-bad:hover{
-  background: var(--couleur-secondaire);
+  background: rgba(var(--couleur-secondaire), 1);
   color: white;
 }
 .section-container{
   padding: 10px;
   border-radius: 10px;
-  box-shadow: var(--shadow-all-around) var(--couleur-secondaire);
+  box-shadow: var(--shadow-all-around) rgba(var(--couleur-secondaire), 1);
   min-width: var(--longuer-min);
 }
 .section-container:hover{
@@ -126,10 +126,10 @@ img{
     margin: 3px 0 2px 0;
     padding: 7px;
     align-content: center;
-    box-shadow: inset 0 0 3px var(--couleur-secondaire);
+    box-shadow: inset 0 0 3px rgba(var(--couleur-secondaire), 1);
     font-size: var(--text-secondaire);
     font-weight: bold;
-    color: var(--couleur-secondaire);
+    color: rgba(var(--couleur-secondaire), 1);
 }
 .default {
   height: 100%;
@@ -150,7 +150,7 @@ img{
 /*/////////////////////////////////////////*/
 
 .svg-icon-profil svg {
-  color: var(--couleur-secondaire);
+  color: rgba(var(--couleur-secondaire), 1);
   font-size: var(--text-secondaire);
   font-family: var(--police-secondaire);
   font-weight: bold;
@@ -234,11 +234,11 @@ img{
     margin-bottom: 10px;
 }
 .profession-info{
-    color: var(--couleur-secondaire);
+    color: rgba(var(--couleur-secondaire), 1);
     font-weight: 600;
 }
 .profession{
-    border-right: 2px solid var(--couleur-secondaire);
+    border-right: 2px solid rgba(var(--couleur-secondaire), 1);
     padding-right: 10px;
 }
 .note-avis-date{
@@ -260,7 +260,7 @@ img{
     border-radius: 10px;
     padding: 10px;
     font-size: var(--text-secondaire);
-    color: var(--couleur-secondaire);
+    color: rgba(var(--couleur-secondaire), 1);
     margin-top: 10px;
     text-align: justify;
     font-weight: 350;
@@ -315,7 +315,7 @@ img{
   background-color: rgba(255, 255, 255, 0.1);
 }
 .stats-temps-items div {
-  color: var(--couleur-secondaire);
+  color: rgba(var(--couleur-secondaire), 1);
   font-weight: 600;
   font-size: var(--text-secondaire);
   display: grid;
@@ -406,7 +406,7 @@ img{
   background-repeat: no-repeat;
 }
 .service-title{
-    color: var(--couleur-secondaire);
+    color: rgba(var(--couleur-secondaire), 1);
     width: 100%;
     font-size: var(--text-secondaire);
 }
@@ -502,7 +502,7 @@ img{
 }
 
 .avis-text p{
-    color: var(--couleur-secondaire);
+    color: rgba(var(--couleur-secondaire), 1);
     font-weight: 500;
 }
 .avis-date h4{
