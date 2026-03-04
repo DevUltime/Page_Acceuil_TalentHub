@@ -52,7 +52,7 @@ const avis = [
   }
 ]
 const services = [
-  /*{
+  {
     titre: "creation d'Application Web",
     photo_service: "./service1.png",
     description: "jaime vraiment ce que tu fais tamo, mais tu devrai tameliorer au niveau du temps de livraison, tu es un peu lent dans ce sens",
@@ -66,7 +66,8 @@ const services = [
     description: "jaime vraiment ce que tu fais tamo, mais tu devrai tameliorer au niveau du temps de livraison, tu es un peu lent dans ce sens",
     prix : "500",
     livraison: "7",
-  },*/
+    note: 4.5,
+  },
 ];
 const stats = {
   service: services.length,
@@ -84,6 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
   MAJportfolios();
   lien_contact();
   default_div();
+  showApercus();
+  
+  //ecouteur pour lenvoie du formulaire de sendModification
+  document.querySelector(".modifier-form").addEventListener("submit", () => {
+      alert("cette fonction nest pas disponible pour le moment")
+  })
 });
 function MAJSectionProfil() {
   const emplacement = [
@@ -213,30 +220,48 @@ function MAJservices(){
   services.forEach((svcs) => {
     if(all_services){
       id++;
-      new_id = String(id);
+      new_id = "service" + String(id);
       id_image = "image" + String(id);
       console.log(new_id)
       const service = `
       <div class="service-particulier flex-column">
-        <div class="service-img-div" id="${id_image}">
-      
+    <div class="service-img-div" id="${id_image}">
+
+    </div>
+    <div class="service-info flex-column">
+        <div class="service-title-note flex-row">
+            <h2 class="service-title">${svcs.titre}</h2>
+            <div class="service-note flex-row">
+                <span>${svcs.note}</span> 
+                <span id = "${new_id}"></span>
+            </div>
         </div>
-        <div class="service-info flex-column">
-          <h2 class="service-title flex-row">${svcs.titre}</h2> 
-          <div class="prix-delivery flex-row"> 
-            <div class="service-prix flex-row"><span>à parti de: </span><h3>${svcs.prix}</h3></div> 
-            <div class="service-delivery flex-row"><span>livré en: </span><h3>${svcs.livraison}</h3><span>jours</span></div> 
-          </div>
-          <div>
+        <div class="prix-delivery flex-row">
+            <div class="service-prix flex-row">
+                <span>à parti de: </span><h3>${svcs.prix}</h3>
+            </div>
+            <div class="service-delivery flex-row">
+                <span>livré en: </span><h3>${svcs.livraison}</h3><span>jours</span>
+            </div>
+        </div>
+        <div>
             <button class="service-btn btn-good">decouvrir</button>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
       `;
-      console.log(`${svcs.photo_service}`);
+      // insertion du service
       all_services.insertAdjacentHTML("beforeend", service);
       const image = document.getElementById(`${id_image}`);
       image.style.backgroundImage = `url("${svcs.photo_service}")`;
+      
+      //ajout de la note
+      note_div = document.getElementById(`${new_id}`)
+      if (note_div){
+        note_div.appendChild(note_etoile(parseFloat(svcs.note)))
+      }else{
+        console.log(`pas de ${new_id}`)
+    }
     }else{
       console.log("le conteneur des services na pas ete trouvée")
     }
@@ -361,4 +386,44 @@ function default_div(){
         }
       }
     });
+}
+
+function showModifier(){
+    modifier = document.querySelector(".modifier-container");
+    if (modifier){
+        modifier.style.display = "flex";
+    }else{
+        console.log("le conteneur modifier na pas ete teouvé")
+    }
+    
+}
+function showApercus(){
+    apercus = document.querySelector(".profil-input")
+    if (apercus){
+        apercus.addEventListener("change", function(event){
+            profil_shoosed = event.target.files[0];
+            reader = new FileReader();
+            reader.onload = function(e){
+                const image = e.target.result;
+                const apercus_canvas = document.querySelector(".image-apercus")
+                if (apercus_canvas){
+                    apercus_canvas.src= image
+                }else{
+                    console.log(`${apercus_canvas} pas trouvé`)
+                }
+            }
+            reader.readAsDataURL(profil_shoosed);
+        });
+    }else{
+        console.log(`${apercus} n'a pas été teouvé`)
+    }
+}
+
+function unShow(element, flex){
+    element_to_show = document.querySelector("."+String(element))
+    if (element_to_show){
+        element_to_show.style.display = flex; 
+    }else{
+        console.log(`${element_to_show} n'a pas été trouvé`)
+    }
 }

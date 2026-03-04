@@ -3,6 +3,7 @@ console.log("Hello world!");
 document.addEventListener("DOMContentLoaded", function() {
     MAJmessage();
     openChat();
+    showMenu();
 });
 
 //demo de remplissage de la section contact, qui sera plus tard remplie par les données de la base de données via le backend
@@ -63,6 +64,23 @@ function fillChatHeader(contact) {
     const  info_header = document.querySelector(".chat-header-info")
     if (info_header) {
         info_header.innerHTML = `
+            <span class="chat-close" onclick="closeChat()">
+                    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" />
+</svg>
+
+                </span>
             <div class="contact-photo profil">
                 <img src="${contact.photo}" alt="Photo de ${contact.nom}">
             </div>
@@ -91,4 +109,40 @@ function openChat() {
 function closeChat() {
     document.querySelector(".section-chat").style.display = "none";
     document.querySelector(".section-contact").style.display = "block";
+}
+
+function showMenu(){
+    let show = "true";
+    const menu_element = [
+        {boutton: ".contact-menu", menu: ".contact-menu-list"},
+        {boutton: ".chat-menu", menu: ".chat-menu-list"},
+        ]
+    menu_element.forEach( ({ boutton, menu }) => {
+        boutton = document.querySelector(boutton)
+        if (boutton){
+            boutton.addEventListener("click", () => {
+            console.log("recherche du menu...")
+            let menu_selected = document.querySelector(menu)
+            if (menu){
+                if (show === "true"){
+                    menu_selected.style.display = "block";
+                    show = "false";
+                    console.log("menu deroulé")
+                }else{
+                    menu_selected.style.display = "none";
+                    show = "true";
+                    console.log("menu fermé")
+                }
+            }else{
+                console.log(`le menu: ${menu} na pas ete trouvé`)
+            }
+        })
+    }else{
+        console.log(`boutton: ${boutton} n'a pas ete trouvé`)
+    }
+    });
+}
+
+function afficherMessage(){
+    message_conteneur = document.querySelector(".")
 }

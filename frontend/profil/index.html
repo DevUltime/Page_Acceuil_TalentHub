@@ -20,7 +20,7 @@
                         <div class="img-div profil">
                             <img src="" class="photo-profil" alt="photo de profil" /> 
                         </div>
-                        <span class="modifier-profil">
+                        <span class="modifier-profil" onclick="showModifier()">
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -343,9 +343,37 @@
                 <div class="all-portfolios">
                 </div>
             </section>
-        </div>
+        </div> 
+        <!--section pout les modification --> 
+         <div class="modifier-container">
+        <form class="modifier-form section-container">
+            <div class="profil-apercu">
+                <p>apercu de la photo de profil</p>
+                <div class="profil profil-apercu-div">
+                    <img src="" alt="image de profil modifiee" class="image-apercus"/>
+                </div>
+                <input type="file" class="profil-input">
+            </div>
+            <div class="label-input flex-column">
+                <label for="nom">nom: </label> 
+                <input type="text" name="nom" />
+            </div> 
+            <div class="label-input flex-column">
+                <label for="prenom">prenom: </label> 
+                <input type="text" name="prenom" />
+            </div>
+            <div class="label-input flex-column">
+                <label for="profession">profession: </label> 
+                <input type="text" name="profession" />
+            </div> 
+            <div class="modifier-action flex-row">
+                <button class="btn-bad" type = "button" onclick="unShow('modifier-container', 'none')">annuller</button> 
+                <button class="btn-good" type="submit">soumettre</button>
+            </div>
+        </form>
+    </div>
         <!--importation du scripte-->
-        <script src="main.js"></script>
+        <script src="main.js"></script> 
     </main>
 </body>
 

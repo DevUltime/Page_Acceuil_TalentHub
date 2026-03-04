@@ -9,17 +9,10 @@
 <body>
     <main>
         <section class="section-contact section-container flex-column">
-            <div class="contact-header">
-                <h1 class="contact-title entete-section">Messagerie</h1>
-            </div>
-            <div class="contact-list flex-column">
-                <!--le js se charge de tout-->
-            </div>
-        </section>
-        <section class="section-chat section-container flex-column">
-            <div class="chat-header  flex-row">
-                <span class="chat-close" onclick="closeChat()">
-                    <svg
+            <div class="contact-header flex-row">
+                <h1 class="contact-title">Messagerie</h1> 
+                <span class="contact-menu menu">
+<svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
   height="24"
@@ -30,16 +23,52 @@
   stroke-linecap="round"
   stroke-linejoin="round"
 >
-  <path d="m12 19-7-7 7-7" />
-  <path d="M19 12H5" />
+  <path d="M4 5h16" />
+  <path d="M4 12h16" />
+  <path d="M4 19h16" />
 </svg>
-
                 </span>
-                <div class="chat-header-info flex-row">
+                <ul class="contact-menu-list menu-list">
+                    <li>message non lus</li>
+                    <li>nouveau contact</li>
+                    <li>non lus</li>
+                    <li>non lus</li>
+                </ul>
+            </div>
+            <div class="contact-list flex-column">
+                <!--le js se charge de tout-->
+            </div>
+        </section>
+        <section class="section-chat section-container flex-column">
+            <div class="chat-header  flex-row">
+                <div class="chat-header-info flex-row"> 
                     <!--le js se charge de tout-->
                 </div>
                 <div class="chat-option-menu">
-
+                <span class="chat-menu menu" >
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 5h16" />
+  <path d="M4 12h16" />
+  <path d="M4 19h16" />
+</svg>
+                </span>
+                <ul class="chat-menu-list menu-list">
+                    <li>message non lus</li>
+                    <li>nouveau contact</li>
+                    <li>non lus</li>
+                    <li>non lus</li>
+                </ul>
+            </div>
                 </div>
             </div>
             <div class="chat-messages">
