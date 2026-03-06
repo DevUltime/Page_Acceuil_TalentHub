@@ -143,6 +143,11 @@ function showMenu(){
     });
 }
 
-function afficherMessage(){
-    message_conteneur = document.querySelector(".")
+function afficherMessage(message){
+    msg_content = document.createElement("div")
+    msg_content.className = "message-particulier"
+    msg_content.innerHTML = `
+    <div class="msg_text">${message.content}</div> 
+    <div class="msg_time"></div>
+    `
 }

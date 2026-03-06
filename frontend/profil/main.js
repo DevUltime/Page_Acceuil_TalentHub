@@ -15,13 +15,29 @@ const infoUser = {
   whatsapp: "+237 640499175",
   email: "TamoEleonor@gmail.com",
   linkedin: "TamoEleonor",
-  face1book: "TamoEleonor237",
+  facebook: "TamoEleonor237",
   instagram: "TamoEleonor officiel",
   impression: 30,
   revenu: 500,
   projet_temps: 10,
   clicks: 500,       
 };
+async function getDonneeUser(){
+    try {
+      const url = "http://localhost:8000/apiUser/user/"
+      const reponse = await fetch(url)
+      if (!reponse.ok){
+        throw new Error("!!!Erreur: " + reponse.status);
+      }
+      const data = await reponse.json()
+      console.log("données parsé en json")
+      console.log(data)
+      alert(data[0].first_name)
+      return data
+    } catch (error) {
+      console.error(error);
+    }
+}
 const avis = [
   {
     pseudo: "Pablo dikaprio",
@@ -86,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
   lien_contact();
   default_div();
   showApercus();
+  getDonneeUser();
   
   //ecouteur pour lenvoie du formulaire de sendModification
   document.querySelector(".modifier-form").addEventListener("submit", () => {
@@ -418,7 +435,6 @@ function showApercus(){
         console.log(`${apercus} n'a pas été teouvé`)
     }
 }
-
 function unShow(element, flex){
     element_to_show = document.querySelector("."+String(element))
     if (element_to_show){
@@ -427,3 +443,4 @@ function unShow(element, flex){
         console.log(`${element_to_show} n'a pas été trouvé`)
     }
 }
+

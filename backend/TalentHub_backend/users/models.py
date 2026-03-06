@@ -18,7 +18,7 @@ class Profil(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     bio = models.TextField(blank = True, null=True)
     skills = models.ManyToManyField(Skill, blank=True)
-    profil_picture = models.ImageField(upload_to = "images/", blank = True, null=True)
+    #profil_picture = models.ImageField(upload_to = "images/", blank = True, null=True)
     rating = models.IntegerField()
     role = models.CharField(max_length = 20 , choices = ROLE_CHOICES)
     created_at = models.DateTimeField(auto_now_add = True)
