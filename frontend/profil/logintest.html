@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connexion</title>
+    <style>
+        body { font-family: Arial; margin: 50px; }
+        form { max-width: 300px; margin: auto; }
+        input { width: 100%; padding: 8px; margin: 5px 0; }
+        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; }
+        #message { text-align: center; margin-top: 10px; }
+        button:active{background: red;}
+    </style>
+</head>
+<body>
+    <form id="loginForm">
+        <h2>Connexion</h2>
+        <input type="text" id="username" placeholder="Nom d'utilisateur" required>
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+        <div id="message"></div>
+    </form>
+
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault()
+    
+    const username = document.getElementById('username').value
+    const password = document.getElementById('password').value
+    const message = document.getElementById('message')
+
+    alert('1. Username: ' + username + ' - Password: ' + password)
+    
+    try {
+        const loginReponse = await fetch('http://localhost:8000/api/token/', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({username, password})
+        })
+        
+        alert('2. Statut: ' + loginReponse.status)
+        
+        if (!loginReponse.ok) {
+            const erreur = await loginReponse.text()
+            alert('3. Erreur: ' + erreur)
+            throw new Error('Identifiants incorrects')
+        }
+        
+        const loginData = await loginReponse.json()
+        alert('4. Token: ' + JSON.stringify(loginData))
+        
+        message.style.color = 'green'
+        message.textContent = 'Connecté !'
+        
+    } catch (error) {
+        alert('5. Catch: ' + error.message)
+        message.style.color = 'red'
+        message.textContent = error.message
+    }
+})
+    </script>
+</body>
+</html>
