@@ -2,6 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: default;
+}
+body{
+    scrollbar-color: #50b5e8;
+}
+a{
+    cursor: pointer;
 }
 .poppins-thin {
   font-family: "Poppins", sans-serif;
@@ -88,6 +95,7 @@ nav ul li a:hover::after{
     display: flex;
     align-items: center;
     justify-content: left;
+    cursor: default;
 }
 .logo img{
     height: 70px;
