@@ -11,6 +11,12 @@
   font-weight: 400;
   font-style: normal;
 }
+li{
+    list-style: none;
+}
+button{
+    cursor: pointer;
+}
 body{
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
@@ -77,6 +83,7 @@ header{
     justify-content: center;
     align-items: center;
     gap: .7rem;
+    margin-right: 1rem;
 }
 .profil-freelancer{
     height: 35px;
@@ -235,6 +242,7 @@ header{
     display: flex;
     justify-content: space-around;
     margin-top: 1rem;
+    gap: 1rem;
 }
 .talents div{
     font-size: .8rem;
@@ -327,6 +335,129 @@ header{
 
 
 
+aside{
+    position: fixed;
+    height: 100vh;
+    scrollbar-width: none;
+    top: 0;
+    width: 17rem;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: 0 1px 10px rgba(80,181,232,0.3);
+    display: none;
+    flex-direction: column;
+    transition: .5s;
+}
+aside .btn-fermer-sidebar{
+    position: absolute;
+    left: -40px;
+    top: 20px;
+    z-index: 30;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(204, 204, 204, 0.1);
+    backdrop-filter: blur(10px);
+}
+.first_bar, .second_bar{
+    width: 20px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #082b39;
+    rotate: 45deg;
+    background-color: red;
+}
+.second_bar{
+    margin-top: -2px;
+    rotate: -45deg;
+}
+aside .profil-freelancer-sidebar{
+    margin: 0;
+
+    display: flex;
+    width: 100%;
+    font-size: .8rem;
+    align-items: center;
+    gap: .6rem;
+    padding: 20px 5px;
+    background: linear-gradient(to right,rgba(26, 144, 191, 0.3),rgba(108, 92, 231, 0.3));
+}
+aside .informations-freelancer-sidebar p{
+    font-size: .8rem;
+    color: #585858;
+}
+.edit-pencil{
+    font-size: 1rem;
+}
+.profil-freelancer-sidebar .profil-freelancer{
+    margin: 0;
+}
+aside .explorer-sidebar{
+    margin-top: 1rem;
+}
+.explorer-sidebar li a{
+    text-decoration: none;
+    color: #082b39;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #c3c3c3;
+}
+.explorer-sidebar li a:hover{
+    background-color: rgba(204, 204, 204, 0.3);
+}
+.deconnexion-sidebar{
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+}
+.deconnexion-sidebar button{
+    background-color: transparent;
+    border: none;
+    color: red;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.logout-btn{
+    font-size: 1rem;
+}
+
+/* faire apparaitre la side bare*/
+.asideActive{
+    display: flex;
+    right: 0;
+    animation: .5s afficherSlidebar ease;
+}
+.asideInActive{
+    display: none;
+    animation: .5s masquerSlidebar ease;
+}
+@keyframes afficherSlidebar{
+    0%{
+        translate: 20rem 0;
+    }
+    100%{
+        translate: 0 0;
+    }
+}
+/*faire disparaitre la side bar*/
+@keyframes masquerSlidebar{
+    0%{
+        translate: 0 0;
+    }
+    100%{
+        translate: -20rem 0;
+    }
+}
+
+
 
 /*responsive design*/
 
@@ -363,21 +494,6 @@ header{
     .recherche-bar, nav ul li{
         display: none;
     }
-    .first_bar{
-        height: 3px;
-        width: 30px;
-        border-radius: 10px;background-color: #082b39;;
-        box-shadow: 0 7px #082b39;
-        transition: .2s;
-    }
-    .second_bar{
-        margin-top: 11px;
-        height: 3px;
-        width: 30px;
-        border-radius: 10px;
-        background-color: #082b39;
-        transition: .2s;
-    }
     .profil .menu-hamburger{
         margin-right: .7rem;
     }
@@ -413,6 +529,9 @@ header{
     }
     .decouvrir-freelancer h3{
         display: none;
+    }
+    aside{
+        width: 85vw;
     }
 
 }
