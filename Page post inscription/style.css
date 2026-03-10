@@ -6,8 +6,14 @@
 :root{
     --couleurprincipale: #50b5e8;
 }
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 body{
     overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
 }
 header{
     z-index: 10;
@@ -62,7 +68,6 @@ header{
 .logo h2{
     font-family: 'poppins',sans-serif;
     font-weight: 600;
-    margin-left: 10px;
     font-size: 18px;
 }
 
@@ -80,6 +85,7 @@ header{
     margin-right: 1rem;
     border: 1px solid var(--couleurprincipale);
     transition: .2s ease-in-out;
+    margin: auto;
 }
 .profil-freelancer:hover{
     translate: 0 -1px;
@@ -138,6 +144,9 @@ header{
     width: 100%;
     background: linear-gradient(to right,rgba(26, 144, 191, 0.3),rgba(255, 255, 255, 0.3),rgba(108, 92, 231, 0.3));
 }
+.pagePrincipale p{
+    font-size: .8rem;
+}
 .bienvenue-user{
     text-align: center;
     gap: 1rem;
@@ -195,6 +204,9 @@ header{
     margin-top: .8rem;
     gap: 2rem;
     flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+    cursor: default;
 }
 .appercu-competences div{
     font-size: .7rem;
@@ -225,6 +237,7 @@ header{
     margin-top: 1rem;
 }
 .talents div{
+    font-size: .8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,29 +266,30 @@ header{
     display: flex;
     gap: 1.5rem;
     margin-top: 1rem;
+    align-items: center;
 }
 .freelancer1 > div:hover{
     translate: 0 -3px;
 }
 .freelancer1 .informations-freelancer{
+    font-size: .8rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 10px 20px;
     border-radius: 6px;
     box-shadow: 0 1px 10px rgba(80,181,232,0.3);
     transition: .3s ease;
+    gap: .5rem;
 }
 .informations-freelancer .metier-freelancer{
-    font-size: .8rem;
+    font-size: .7rem;
     color: #585858;
 }
 .informations-freelancer .nbre-avis-freelancer{
-    font-size: .8rem;
+    font-size: .7rem;
 }
 .informations-freelancer .nbre-avis-freelancer span{
     color: #585858;
-    font-size: .8rem;
+    font-size: .6rem;
 }
 
 .decouvrir-freelancer{
@@ -287,6 +301,7 @@ header{
     box-shadow: 0 1px 10px rgba(80,181,232,0.3);
     flex-grow: 1;
     transition: .3s ease;
+    font-size: .8rem;
     
 }
 .decouvrir-freelancer button{
@@ -300,6 +315,7 @@ header{
     display: flex;
     align-items: center;
     transition: .2s;
+    white-space: nowrap;
 }
 .decouvrir-freelancer button:hover{
     opacity: .8;
@@ -307,4 +323,96 @@ header{
 .decouvrir-freelancer button .explorer-arrow{
     font-size: .7rem;
     padding: 0;
+}
+
+
+
+
+/*responsive design*/
+
+@media screen and (max-width: 900px) {
+    .recherche-bar input{
+        display: none;
+    }
+    .recherche-bar{
+        border-radius: 100px;
+        padding: 6px 9px;
+        box-shadow: inset -1px -1px 3px var(--couleurprincipale), 1px 1px 5px #00000011;
+    }
+    .recherche-bar::after{
+        content: 'Rechercher';
+        padding-left: 30px;
+    }
+    .recherche-bar .btn-rechercher{
+        color: #082b39;
+    }
+    .talents-populaires .talents{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-content: space-around;
+    }
+    .talents div{
+        width: 100%;
+    }
+}
+@media  screen and (max-width: 700px) {
+    header{
+        height: 50px;
+    }
+    .recherche-bar, nav ul li{
+        display: none;
+    }
+    .first_bar{
+        height: 3px;
+        width: 30px;
+        border-radius: 10px;background-color: #082b39;;
+        box-shadow: 0 7px #082b39;
+        transition: .2s;
+    }
+    .second_bar{
+        margin-top: 11px;
+        height: 3px;
+        width: 30px;
+        border-radius: 10px;
+        background-color: #082b39;
+        transition: .2s;
+    }
+    .profil .menu-hamburger{
+        margin-right: .7rem;
+    }
+    .bar-recheche-competence{
+        width: 85%;
+    }
+    .bar-recheche-competence input{
+        width: 100%;
+    }
+    .appercu-competences{
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
+    .appercu-competences div{
+        white-space: nowrap;
+    }
+    .talents-populaires .talents{
+        grid-template-columns: 1fr;
+    }
+
+    .freelancer1 .informations-freelancer{
+        flex-grow: 1;
+        width: 100%;
+        align-items: center;
+    }
+    .informations-freelancer .profil-freelancer{
+        margin: 0;
+    }
+    .decouvrir-freelancer{
+        position: absolute;
+        box-shadow: none;
+        right: 5%;
+    }
+    .decouvrir-freelancer h3{
+        display: none;
+    }
+
 }
