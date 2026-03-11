@@ -340,13 +340,16 @@ aside{
     height: 100vh;
     scrollbar-width: none;
     top: 0;
+    right: 0;
     width: 17rem;
     background-color: #fff;
     z-index: 10;
     box-shadow: 0 1px 10px rgba(80,181,232,0.3);
-    display: none;
+    display: flex;
+    translate: 150% 0;
     flex-direction: column;
-    transition: .5s;
+    transition: .3s ease-in-out;
+
 }
 aside .btn-fermer-sidebar{
     position: absolute;
@@ -431,30 +434,7 @@ aside .explorer-sidebar{
 
 /* faire apparaitre la side bare*/
 .asideActive{
-    display: flex;
-    right: 0;
-    animation: .5s afficherSlidebar ease;
-}
-.asideInActive{
-    display: none;
-    animation: .5s masquerSlidebar ease;
-}
-@keyframes afficherSlidebar{
-    0%{
-        translate: 20rem 0;
-    }
-    100%{
-        translate: 0 0;
-    }
-}
-/*faire disparaitre la side bar*/
-@keyframes masquerSlidebar{
-    0%{
-        translate: 0 0;
-    }
-    100%{
-        translate: -20rem 0;
-    }
+    translate: 0 0;
 }
 
 
