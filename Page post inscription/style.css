@@ -500,6 +500,7 @@ aside .explorer-sidebar{
     .appercu-competences{
         overflow-x: scroll;
         scrollbar-width: none;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
     .appercu-competences div{
         white-space: nowrap;
