@@ -218,8 +218,8 @@ header{
 .appercu-competences div{
     font-size: .7rem;
     padding: 5px;
-    backdrop-filter: blur(30px);
-    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(50px);
+    background-color: rgba(108, 92, 231, 0.05);
     border-radius: 6px;
 }
 
@@ -256,7 +256,7 @@ header{
     backdrop-filter: blur(10px);
     gap: .5rem;
     padding: 5px;
-    transition: .3s ease;
+    transition: .2s ease;
 }
 .talents div:hover{
     translate: 0 -3px;
@@ -285,8 +285,10 @@ header{
     padding: 10px 20px;
     border-radius: 6px;
     box-shadow: 0 1px 10px rgba(80,181,232,0.3);
-    transition: .3s ease;
+    transition: .2s ease;
     gap: .5rem;
+    width: max-content;
+    white-space: nowrap;
 }
 .informations-freelancer .metier-freelancer{
     font-size: .7rem;
@@ -348,7 +350,7 @@ aside{
     display: flex;
     translate: 150% 0;
     flex-direction: column;
-    transition: .3s ease-in-out;
+    transition: translate .3s ease-in-out;
 
 }
 aside .btn-fermer-sidebar{
@@ -363,7 +365,7 @@ aside .btn-fermer-sidebar{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(204, 204, 204, 0.1);
+    background-color: rgba(204, 204, 204, 0.5);
     backdrop-filter: blur(10px);
 }
 .first_bar, .second_bar{
@@ -443,19 +445,20 @@ aside .explorer-sidebar{
 
 @media screen and (max-width: 900px) {
     .recherche-bar input{
-        display: none;
-    }
-    .recherche-bar{
         border-radius: 100px;
-        padding: 6px 9px;
+        padding: 6px 5px 6px 30px;
         box-shadow: inset -1px -1px 3px var(--couleurprincipale), 1px 1px 5px #00000011;
+        width: 150px;
+        transition: .2s ease-in-out;
     }
-    .recherche-bar::after{
-        content: 'Rechercher';
-        padding-left: 30px;
+    .recherche-bar input:focus{
+        background-color: #fff;
+        z-index: 20;
+        position: absolute;
+        width: 17rem;
     }
     .recherche-bar .btn-rechercher{
-        color: #082b39;
+        z-index: 21;
     }
     .talents-populaires .talents{
         display: grid;
@@ -467,7 +470,18 @@ aside .explorer-sidebar{
         width: 100%;
     }
 }
+
+
+
 @media  screen and (max-width: 700px) {
+    .recherche-bar{
+        display: none;
+    }
+}
+
+
+
+@media  screen and (max-width: 560px) {
     header{
         height: 50px;
     }
@@ -505,7 +519,8 @@ aside .explorer-sidebar{
     .decouvrir-freelancer{
         position: absolute;
         box-shadow: none;
-        right: 5%;
+        right: 7%;
+        padding: 0;
     }
     .decouvrir-freelancer h3{
         display: none;
