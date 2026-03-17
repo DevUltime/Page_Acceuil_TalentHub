@@ -1,0 +1,418 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --couleurprincipale: #50b5e8;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body{
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+}
+header{
+    z-index: 10;
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    backdrop-filter: blur(50px);
+}
+.nav-bar ul{
+    display: flex;
+}
+.nav-bar ul li{
+    list-style: none;
+    margin: 0 15px;
+}
+.nav-bar ul li a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #082b39;
+    font-family: 'poppins',sans-serif;
+    text-transform: capitalize;
+    font-weight: 450;
+}
+.nav-bar ul li a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #50b5e8;
+    border-radius: 10px;
+    transition: .3s ease;
+}
+.nav-bar ul li a:hover::after{
+    width: 100%;
+}
+
+.logo{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: default;
+    color: #1a8fbf;
+}
+.logo img{
+    height: 70px;
+}
+.logo h2{
+    font-family: 'poppins',sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+.profil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .7rem;
+}
+.profil-freelancer{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    border: 1px solid var(--couleurprincipale);
+    transition: .2s ease-in-out;
+    margin: auto;
+}
+.profil-freelancer:hover{
+    translate: 0 -1px;
+    scale: 1.009;
+    box-shadow: 0 4px 10px rgba(80,181,232,0.3);
+}
+.profil-freelancer img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.notif-freelancer{
+    padding: 6px;
+    border-radius: 50%;
+    transition: .3s;
+}
+.notif-freelancer:hover{
+    background-color: rgba(8, 43, 57, 0.1);
+}
+
+.recherche-bar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.recherche-bar input{
+    height:30px;
+    width: 20rem;
+    border-radius: 100px;
+    appearance: none;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 0 30px;
+    background-color: transparent;
+}
+.recherche-bar input:focus{
+    border: 1px solid var(--couleurprincipale);
+}
+.recherche-bar input::placeholder{
+    color: #c3c3c3;
+}
+.btn-rechercher{
+    position: absolute;
+    left: 4px;
+    color: #c3c3c3;
+}
+
+
+
+.pagePrincipale{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(to right,rgba(26, 144, 191, 0.3),rgba(255, 255, 255, 0.3),rgba(108, 92, 231, 0.3));
+}
+.pagePrincipale p{
+    font-size: .8rem;
+}
+.bienvenue-user{
+    text-align: center;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.nom-user{
+    color: var(--couleurprincipale);
+}
+.bar-recheche-competence{
+    margin-top: 2rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+
+}
+.bar-recheche-competence input{
+    height: 30px;
+    width: 25rem;
+    border-radius: 100px;
+    padding: 0 30px;
+    border: 1px solid #c3c3c3;
+    outline: none;
+    appearance: none;
+}
+.bar-recheche-competence input:focus{
+    border: 1px solid var(--couleurprincipale);
+}
+.bar-recheche-competence input::placeholder{
+    color: #c3c3c3;
+}
+.bar-recheche-competence button{
+    position: absolute;
+    right: 2px;
+    height: 26px;
+    border-radius: 100px;
+    background: linear-gradient(90deg,#50b5e8,#1a8fbf);
+    border: none;
+    font-size: .7rem;
+    padding: 0 7px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: .2s;
+}
+.bar-recheche-competence button:hover{
+    opacity: .8;
+}
+.explorer-arrow{
+    font-size: .7rem;
+    padding: 0;
+}
+.appercu-competences{
+    display: flex;
+    margin-top: .8rem;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+    cursor: default;
+}
+.appercu-competences div{
+    font-size: .7rem;
+    padding: 5px;
+    backdrop-filter: blur(30px);
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+}
+
+.talents-populaires{
+    margin: 2rem auto;
+    width: 90%;
+}
+.talents-populaires h2, .freelancers-recommandes h2{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+.talents-populaires h2 hr, .freelancers-recommandes h2 hr{
+    width: 100%;
+    border: 1px solid #00000015;
+    margin-bottom: -.7rem;
+    margin-left: 3px;
+}
+.talents-populaires .talents{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+.talents div{
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: max-content;
+    border-radius: 6px;
+    background: linear-gradient(to right,rgba(26, 144, 191, 0.3),rgba(108, 92, 231, 0.3));
+    backdrop-filter: blur(10px);
+    gap: .5rem;
+    padding: 5px;
+    transition: .3s ease;
+}
+.talents div:hover{
+    translate: 0 -3px;
+}
+.talents div img{
+    height: 100%;
+    width: min-content;
+    object-fit: cover;
+}
+.freelancers-recommandes{
+    margin: 2rem auto;
+    width: 90%; 
+}
+.freelancer1{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+.freelancer1 > div:hover{
+    translate: 0 -3px;
+}
+.freelancer1 .informations-freelancer{
+    font-size: .8rem;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 10px rgba(80,181,232,0.3);
+    transition: .3s ease;
+    gap: .5rem;
+}
+.informations-freelancer .metier-freelancer{
+    font-size: .7rem;
+    color: #585858;
+}
+.informations-freelancer .nbre-avis-freelancer{
+    font-size: .7rem;
+}
+.informations-freelancer .nbre-avis-freelancer span{
+    color: #585858;
+    font-size: .6rem;
+}
+
+.decouvrir-freelancer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 10px rgba(80,181,232,0.3);
+    flex-grow: 1;
+    transition: .3s ease;
+    font-size: .8rem;
+    
+}
+.decouvrir-freelancer button{
+    height: 26px;
+    border-radius: 100px;
+    background: linear-gradient(90deg,#50b5e8,#1a8fbf);
+    border: none;
+    font-size: .7rem;
+    padding: 0 7px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: .2s;
+    white-space: nowrap;
+}
+.decouvrir-freelancer button:hover{
+    opacity: .8;
+}
+.decouvrir-freelancer button .explorer-arrow{
+    font-size: .7rem;
+    padding: 0;
+}
+
+
+
+
+/*responsive design*/
+
+@media screen and (max-width: 900px) {
+    .recherche-bar input{
+        display: none;
+    }
+    .recherche-bar{
+        border-radius: 100px;
+        padding: 6px 9px;
+        box-shadow: inset -1px -1px 3px var(--couleurprincipale), 1px 1px 5px #00000011;
+    }
+    .recherche-bar::after{
+        content: 'Rechercher';
+        padding-left: 30px;
+    }
+    .recherche-bar .btn-rechercher{
+        color: #082b39;
+    }
+    .talents-populaires .talents{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-content: space-around;
+    }
+    .talents div{
+        width: 100%;
+    }
+}
+@media  screen and (max-width: 700px) {
+    header{
+        height: 50px;
+    }
+    .recherche-bar, nav ul li{
+        display: none;
+    }
+    .first_bar{
+        height: 3px;
+        width: 30px;
+        border-radius: 10px;background-color: #082b39;;
+        box-shadow: 0 7px #082b39;
+        transition: .2s;
+    }
+    .second_bar{
+        margin-top: 11px;
+        height: 3px;
+        width: 30px;
+        border-radius: 10px;
+        background-color: #082b39;
+        transition: .2s;
+    }
+    .profil .menu-hamburger{
+        margin-right: .7rem;
+    }
+    .bar-recheche-competence{
+        width: 85%;
+    }
+    .bar-recheche-competence input{
+        width: 100%;
+    }
+    .appercu-competences{
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
+    .appercu-competences div{
+        white-space: nowrap;
+    }
+    .talents-populaires .talents{
+        grid-template-columns: 1fr;
+    }
+
+    .freelancer1 .informations-freelancer{
+        flex-grow: 1;
+        width: 100%;
+        align-items: center;
+    }
+    .informations-freelancer .profil-freelancer{
+        margin: 0;
+    }
+    .decouvrir-freelancer{
+        position: absolute;
+        box-shadow: none;
+        right: 5%;
+    }
+    .decouvrir-freelancer h3{
+        display: none;
+    }
+
+}

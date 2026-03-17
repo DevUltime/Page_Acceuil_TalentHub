@@ -27,8 +27,6 @@
     const username = document.getElementById('username').value
     const password = document.getElementById('password').value
     const message = document.getElementById('message')
-
-    alert('1. Username: ' + username + ' - Password: ' + password)
     
     try {
         const loginReponse = await fetch('http://localhost:8000/api/token/', {

@@ -22,22 +22,49 @@ const infoUser = {
   projet_temps: 10,
   clicks: 500,       
 };
-async function getDonneeUser(){
+async function obtainToken(){
     try {
-      const url = "http://localhost:8000/apiUser/user/"
-      const reponse = await fetch(url)
-      if (!reponse.ok){
-        throw new Error("!!!Erreur: " + reponse.status);
-      }
-      const data = await reponse.json()
-      console.log("données parsé en json")
-      console.log(data)
-      alert(data[0].first_name)
-      return data
+        url = "http://localhost:8000/api/token/"
+        const reponse = await fetch(url, {
+            method : 'POST',
+            headers : {'Content-Type' : 'application/json'},
+            body : JSON.stringify({username : 'jhon0', password : 'Banane1234'}),
+        });
+        if(!reponse.ok){
+            throw new Error('erreur: ' + reponse.status);
+        }
+        const data = await reponse.json()
+        console.log('token recuperee :' + data.access)
+        localStorage.setItem('token', data.access)
+        return data.access
     } catch (error) {
       console.error(error);
     }
 }
+
+async function profilData(){
+    try {
+        url = 'http://localhost:8000/apiUser/profil/'
+        const token = await obtainToken()
+        console.log(`token de recuperation ${token}`)
+        const getdata = await fetch(url, {
+            method : 'GET',
+            headers : {'authorization' : 'Bearer ' + token},
+        });
+        if (!getdata.ok){
+            throw new Error('erreur de recuperation: ' + getdata.status);
+        }
+        console.log(getdata.status)
+        const data = await getdata.json()
+        console.log(data)
+        alert(data[0].profil_picture)
+        document.querySelector(".rien").src = data[0].profil_picture
+        document.querySelector(".testt").innerText = data[0].pseudo
+    } catch (error) {
+      console.error(error);
+    }
+}
+
 const avis = [
   {
     pseudo: "Pablo dikaprio",
@@ -102,12 +129,15 @@ document.addEventListener("DOMContentLoaded", function () {
   lien_contact();
   default_div();
   showApercus();
-  getDonneeUser();
+  profilData();
   
   //ecouteur pour lenvoie du formulaire de sendModification
-  document.querySelector(".modifier-form").addEventListener("submit", () => {
+  modifier = document.querySelector(".modifier-form")
+  if(modifier){
+      modifier.addEventListener("submit", () => {
       alert("cette fonction nest pas disponible pour le moment")
-  })
+      })
+  }
 });
 function MAJSectionProfil() {
   const emplacement = [
@@ -362,7 +392,6 @@ function lien_contact(){
     }
   });
 } 
-
 function default_div(){
   element = [
     {data: services, message:"pas de service pour le moment", div:".services-container"},
@@ -404,9 +433,8 @@ function default_div(){
       }
     });
 }
-
 function showModifier(){
-    modifier = document.querySelector(".modifier-container");
+    modifier = document.querySelector(".modifier-form-container");
     if (modifier){
         modifier.style.display = "flex";
     }else{

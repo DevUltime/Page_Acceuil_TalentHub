@@ -6,7 +6,18 @@ app_name = "apiUser"
 
 urlpatterns = [ 
     path('profil/', 
-    views.ProfilViewSet.as_view(), 
+    views.ProfilViewSet.as_view({
+        'get' : 'list',
+        'post' : 'create',
+    }), 
+    name="profil-list-create"),
+    
+    path('profil/<pk>/', 
+    views.ProfilViewSet.as_view({
+        'get' : 'retrieve',
+        'put' : 'update',
+        'delete' : 'destroy',
+    }), 
     name="profil-list-create"),
     
     path('skill/', 
@@ -17,7 +28,26 @@ urlpatterns = [
     views.UserViewSet.as_view(), 
     name="user-list-create"),
     
+    path('allusers/', 
+    views.AllUsersViewSet.as_view({
+        "get" : "list",
+        "post" : "create",
+    }), 
+    name="users-list-create"),
+    
+    path('allusers/<pk>/', 
+    views.AllUsersViewSet.as_view({
+        "get" : "retrieve", 
+        "put" : "update", 
+        "delete" : "destroy",
+    }), 
+    name="users-list-create"),
+    
     path('skill-suggestion/', 
     views.SkillSuggestionViewSet.as_view(), 
     name="skill-suggestion-list-create"),
+    
+    path('language/', 
+    views.LanguageViewSet.as_view(), 
+    name="language-list-create"),
 ]

@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User 
+from django.conf import settings 
+
+User = settings.AUTH_USER_MODEL
 
 class Conversation(models.Model):
     first_person = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "conversation_en_tant_que_first")
@@ -8,7 +10,7 @@ class Conversation(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
     
     def __str__(self):
-        return f"{self.first_person.username} {self.second_person.username}"
+        return f"{self.first_person.email} {self.second_person.email}"
 
 
 class Message(models.Model): 
@@ -18,5 +20,5 @@ class Message(models.Model):
     conversation = models.ForeignKey(Conversation, on_delete = models.CASCADE)
     
     def __str__(self):
-        return f"{self.sender.username}: , {self.content}"
+        return f"{self.sender.email}: , {self.content}"
         

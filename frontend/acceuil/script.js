@@ -1,5 +1,21 @@
+import { afficherModal } from "../globalSettings/main.js";
+console.log("debut");
+
+/*
+//clic sur le logo talentHub
+let logo = document.querySelector("#logo");
+let a = document.createElement = ("a");
+a.href = "index.html";
+logo.addEventListener("click", ()=>{
+    a.actived = true;
+});
+*/
+document.addEventListener('DOMContentLoaded', function(){
+    loginForm();
+});
+
 //animation du menu hamburger
-function myFunction(){
+window.myFunction = function(){
     let firstBar = document.querySelector(".first_bar"),
     secondBar = document.querySelector(".second_bar"),
     Navig = document.querySelector(".navig"),
@@ -12,15 +28,54 @@ function myFunction(){
 };
 
 //appel de la page de connexion
-function getConnexionPage(){
+window.getConnexionPage = () => {
     let connexionPage = document.querySelector(".connexion_page");
     connexionPage.classList.toggle("connexionPage");
 };
 
-//clic sur le logo talentHub
-let logo = document.querySelector("#logo"),
-a = document.createElement = ("a");
-a.href = "index.html";
-logo.addEventListener("click", ()=>{
-    a.actived = true
-})
+
+//function du login
+async function loginForm(){
+	
+    const login_form = document.getElementById("login_form")
+    if (login_form){
+    	
+        login_form.addEventListener("submit", async (e) => {
+            e.preventDefault()
+            const email = document.getElementById("email").value
+            const password = document.getElementById("mot_passe").value
+            try {
+                const  requette = await fetch(login_form.action, {
+                   method : login_form.method, 
+                   headers : {
+                       'Content-Type' : 'application/json'
+                   },
+                   body : JSON.stringify({
+                       email : email,
+                       password : password,
+                   }), 
+                });
+                
+                if (!requette.ok){
+                    throw new Error(requette.status + " " + requette.statusText);
+                }else{
+                    const text = `${email} authentifier avec success`;
+                    afficherModal(text);
+                    let connexionPage = document.querySelector(".connexion_page");
+                    connexionPage.classList.toggle("connexionPage");
+                }
+                const requetteData = await requette.json()
+                console.log(requetteData.access)
+                localStorage.setItem("token", requetteData.access)
+            } catch (error) {
+              afficherModal(error);
+            }
+        })
+    }else{
+        alert(`${login_form} non trouvé`)
+    }
+   
+}
+
+console.log("fin")
+

@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <span class="testt"></span>
     <main class="flex-column">
         <div class="profil-propos-Container flex-row ligne">
             <!--premiere ligne de la page -->
@@ -345,33 +346,37 @@
             </section>
         </div> 
         <!--section pout les modification --> 
-         <div class="modifier-container">
-        <form class="modifier-form section-container">
-            <div class="profil-apercu">
+        
+        <div class="modifier-form-container">
+            <form class="modifier-form section-container flex-row">
+                <div class="profil-apercu flex-column">
                 <p>apercu de la photo de profil</p>
                 <div class="profil profil-apercu-div">
                     <img src="" alt="image de profil modifiee" class="image-apercus"/>
                 </div>
                 <input type="file" class="profil-input">
             </div>
-            <div class="label-input flex-column">
+                <fieldset class="flex-column">
+                <div class="label-input flex-column">
                 <label for="nom">nom: </label> 
                 <input type="text" name="nom" />
             </div> 
-            <div class="label-input flex-column">
+                <div class="label-input flex-column">
                 <label for="prenom">prenom: </label> 
                 <input type="text" name="prenom" />
             </div>
-            <div class="label-input flex-column">
+                <div class="label-input flex-column">
                 <label for="profession">profession: </label> 
                 <input type="text" name="profession" />
             </div> 
-            <div class="modifier-action flex-row">
+                <div class="modifier-action flex-row">
                 <button class="btn-bad" type = "button" onclick="unShow('modifier-container', 'none')">annuller</button> 
                 <button class="btn-good" type="submit">soumettre</button>
             </div>
-        </form>
-    </div>
+            </fieldset>
+            </form> 
+        </div>
+
     <menu>
       <span class="profil-menu menu">
 <svg

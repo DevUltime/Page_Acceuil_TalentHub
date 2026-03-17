@@ -1,16 +1,19 @@
 from rest_framework import serializers 
+from django.contrib.auth import get_user_model
 from .models import Conversation, Message
 
+User = get_user_model()
+
 class ConversationSerializer(serializers.ModelSerializer):
-    frist_person = PrimaryKeyRelatedField(unique = True, queryset = Conversation.objects.all())
-    frist_second = PrimaryKeyRelatedField(unique = True, queryset = Conversation.objects.all())
+    first_person = serializers.PrimaryKeyRelatedField(queryset = User.objects.all())
+    second_person = serializers.PrimaryKeyRelatedField(queryset = User.objects.all())
     
     class Meta:
         model =  Conversation
-        fields =  ["frist_person", "second_person"]
+        fields =  ["first_person", "second_person"]
 
-class MessageField(serializers.ModelSerializer):
-    conversation = PrimaryKeyRelatedField(unique = True, queryset=Conversation.objects.all())
+class MessageSerializer(serializers.ModelSerializer):
+    conversation = serializers.PrimaryKeyRelatedField(queryset=Conversation.objects.all())
     class Meta:
         model = Message
         fields = ["content", "send_at", "sender", "conversation"]
