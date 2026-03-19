@@ -29,8 +29,13 @@ export function afficherModal(text="rien", options={}){
 	</div>
 	`;
 	document.body.appendChild(modal)
+	alert("✅ Modal ajouté au DOM");
+alert("Nombre de modals dans le DOM:" + document.querySelectorAll('.modal').length);
+alert("Contenu du modal:" + modal.outerHTML);
+	//document.body.style.opacity = "0.1"
 	setTimeout(() => {
 		modal.remove()
+		document.body.style.opacity = "1"
 	}, 3000);
 	
 }
