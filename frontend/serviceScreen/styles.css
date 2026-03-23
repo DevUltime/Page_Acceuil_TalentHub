@@ -1,0 +1,20 @@
+/*import du css exterieur */
+@import url("../globalSettings/styles.css");
+
+/*/////////////////////////////////////
+//   style de la section header     //
+///////////////////////////////////*/
+.services-screen-header{
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid rgba(var(--couleur-secondaire), 0.5);
+}
+.bar-trie{
+	justify-content: flex-start;
+	align-items: center;
+	gap: 50px;
+	border-bottom: 1px solid rgba(var(--couleur-secondaire), 0.5);
+}
+.bar-trie p:hover{
+	color:rgba(var(--couleur-principale), 0.5) ;
+}

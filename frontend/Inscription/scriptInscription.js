@@ -33,7 +33,6 @@ async function createUser(){
     if (register_form){
         register_form.addEventListener("submit", async (e) => {
             e.preventDefault()
-        
             const email = document.getElementById("email").value;
             const last_name = document.getElementById("nom").value;
             const first_name = document.getElementById("prenom").value;
@@ -61,11 +60,12 @@ async function createUser(){
                 }
                 const data = await requette.json()
                 const text = email + " enregistrer avec succes"
-                afficherModal(text)
+                alert(text) //jutilise alert par ce que afficherModal ne marche pas
+                afficherModal(text) //cette instruction est sencee afficher le modal
             }catch (error) {
               console.error(error);
-              alert(error)
-              afficherModal(error)
+              alert(error) //jutilise alert par ce que afficherModal ne marche pas
+              afficherModal(error)//cette instruction est sencee afficher le modal
             }
             
         });

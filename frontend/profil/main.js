@@ -28,17 +28,16 @@ async function obtainToken(){
         const reponse = await fetch(url, {
             method : 'POST',
             headers : {'Content-Type' : 'application/json'},
-            body : JSON.stringify({username : 'jhon0', password : 'Banane1234'}),
+            body : JSON.stringify({email : 'tkemma585@gmail.com', password : '123456'}),
         });
         if(!reponse.ok){
-            throw new Error('erreur: ' + reponse.status);
+            throw new Error('erreur: ' + reponse.status + reponse.statusText);
         }
         const data = await reponse.json()
         console.log('token recuperee :' + data.access)
         localStorage.setItem('token', data.access)
         return data.access
     } catch (error) {
-      console.error(error);
     }
 }
 
@@ -48,13 +47,14 @@ async function profilData(){
         const token = await obtainToken()
         console.log(`token de recuperation ${token}`)
         const getdata = await fetch(url, {
-            method : 'GET',
+            method : 'post',
             headers : {'authorization' : 'Bearer ' + token},
         });
         if (!getdata.ok){
-            throw new Error('erreur de recuperation: ' + getdata.status);
+            throw new Error('erreur de recuperation: ' + getdata.status + " " + getdata.statusText);
         }
-        console.log(getdata.status)
+        alert(token)
+        alert(getdata.status)
         const data = await getdata.json()
         console.log(data)
         alert(data[0].profil_picture)
@@ -62,8 +62,9 @@ async function profilData(){
         document.querySelector(".testt").innerText = data[0].pseudo
     } catch (error) {
       console.error(error);
+      alert(error);
     }
-}
+} 
 
 const avis = [
   {

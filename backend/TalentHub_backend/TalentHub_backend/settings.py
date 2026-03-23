@@ -61,7 +61,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'TalentHub_backend.wsgi.application'
-
+ASGI_APPLICATION = "TalentHub_backend.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
@@ -128,4 +128,5 @@ CORS_ALLOW_HEADERS = ['*']
 CSRF_TRUSTED_ORIGINS = [ "http://localhost:8158", ]
 CORS_ALLOWED_ORIGIN = [ "http://localhost:8000", "http://127.0.0.1:8000" ]
 
+#configuration chanells 
 

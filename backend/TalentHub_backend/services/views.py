@@ -11,6 +11,7 @@ class ServiceViewSet(ListCreateAPIView):
     def get_queryset(self):
         profil = Profil.objects.get(user = self.request.user)
         return Service.objects.filter(owner = profil)
+        
     
     def perform_create(self, serializer):
         profil = Profil.objects.get(user = self.request.user)

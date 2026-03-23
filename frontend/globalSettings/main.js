@@ -1,4 +1,10 @@
-export function afficherModal(text="rien", options={}){
+//configiration global
+
+//const urlServer = "http://localhost:8000/";
+//export urlServer;
+
+//fonction pour laffichage dynamique dun modal
+export function afficherModal(text="rien", options={}){ 
 	//differents options: 
 	const {
 		textBad = "annuler",
@@ -29,23 +35,13 @@ export function afficherModal(text="rien", options={}){
 	</div>
 	`;
 	document.body.appendChild(modal)
-	alert("✅ Modal ajouté au DOM");
-alert("Nombre de modals dans le DOM:" + document.querySelectorAll('.modal').length);
-alert("Contenu du modal:" + modal.outerHTML);
 	//document.body.style.opacity = "0.1"
 	setTimeout(() => {
 		modal.remove()
 		document.body.style.opacity = "1"
 	}, 3000);
 	
-}
+} 
 console.log("bonjour")
-/*
-document.addEventListener("DOMContentLoaded", () =>  {
-	//alert("hello, cest le fichier externe qui est en action");
-
-	afficherModal("bonsoir", "ouvrir", "fermer")
-})
-*/
 
 

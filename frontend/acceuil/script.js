@@ -1,5 +1,4 @@
 import { afficherModal } from "../globalSettings/main.js";
-console.log("debut");
 
 /*
 //clic sur le logo talentHub
@@ -77,5 +76,4 @@ async function loginForm(){
    
 }
 
-console.log("fin")
 
