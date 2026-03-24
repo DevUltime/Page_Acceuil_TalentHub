@@ -5,7 +5,8 @@
 
 //fonction pour laffichage dynamique dun modal
 export function afficherModal(text="rien", options={}){ 
-	//differents options: 
+	//differents options:
+	alert("afficherModal")
 	const {
 		textBad = "annuler",
 		textGood = "effectuer",
@@ -35,11 +36,9 @@ export function afficherModal(text="rien", options={}){
 	</div>
 	`;
 	document.body.appendChild(modal)
-	//document.body.style.opacity = "0.1"
 	setTimeout(() => {
 		modal.remove()
-		document.body.style.opacity = "1"
-	}, 3000);
+	}, 2000);
 	
 } 
 console.log("bonjour")

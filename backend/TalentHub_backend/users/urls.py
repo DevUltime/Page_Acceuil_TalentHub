@@ -5,19 +5,9 @@ from . import views
 app_name = "apiUser"
 
 urlpatterns = [ 
-    path('profil/', 
-    views.ProfilViewSet.as_view({
-        'get' : 'list',
-        'post' : 'create',
-    }), 
-    name="profil-list-create"),
     
-    path('profil/<pk>/', 
-    views.ProfilViewSet.as_view({
-        'get' : 'retrieve',
-        'put' : 'update',
-        'delete' : 'destroy',
-    }), 
+    path('profil/', 
+    views.ProfilViewSet.as_view(), 
     name="profil-list-create"),
     
     path('skill/', 
@@ -35,13 +25,13 @@ urlpatterns = [
     }), 
     name="users-list-create"),
     
-    path('allusers/<pk>/', 
+    path('allusers/<int:pk>/', 
     views.AllUsersViewSet.as_view({
         "get" : "retrieve", 
         "put" : "update", 
         "delete" : "destroy",
     }), 
-    name="users-list-create"),
+    name="users-details"),
     
     path('skill-suggestion/', 
     views.SkillSuggestionViewSet.as_view(), 
@@ -51,3 +41,19 @@ urlpatterns = [
     views.LanguageViewSet.as_view(), 
     name="language-list-create"),
 ]
+
+'''    path('profil/', 
+    views.ProfilViewSet.as_view({
+        'get' : 'list',
+        'post' : 'create',
+    }), 
+    name="profil-list-create"),
+    
+    path('profil/<pk>/', 
+    views.ProfilViewSet.as_view({
+        'get' : 'retrieve',
+        'put' : 'update',
+        'delete' : 'destroy',
+    }), 
+    name="profil-details"),
+'''  

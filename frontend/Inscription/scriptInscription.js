@@ -58,14 +58,13 @@ async function createUser(){
                 if (!requette.ok){
                 	throw new Error(requette.status + " " + requette.statusText);
                 }
-                const data = await requette.json()
-                const text = email + " enregistrer avec succes"
-                alert(text) //jutilise alert par ce que afficherModal ne marche pas
+                const data = await requette.json();
+                const text = `${email} enregistrer avec succes`;
+                alert("attention...!!!")
                 afficherModal(text) //cette instruction est sencee afficher le modal
+                alert(text) //jutilise alert par ce que afficherModal ne marche pas
             }catch (error) {
-              console.error(error);
-              alert(error) //jutilise alert par ce que afficherModal ne marche pas
-              afficherModal(error)//cette instruction est sencee afficher le modal
+              afficherModal(error)
             }
             
         });

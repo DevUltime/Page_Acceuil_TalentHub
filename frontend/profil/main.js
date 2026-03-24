@@ -36,6 +36,7 @@ async function obtainToken(){
         const data = await reponse.json()
         console.log('token recuperee :' + data.access)
         localStorage.setItem('token', data.access)
+        alert(data.access)
         return data.access
     } catch (error) {
     }
@@ -47,7 +48,7 @@ async function profilData(){
         const token = await obtainToken()
         console.log(`token de recuperation ${token}`)
         const getdata = await fetch(url, {
-            method : 'post',
+            method : 'get',
             headers : {'authorization' : 'Bearer ' + token},
         });
         if (!getdata.ok){
