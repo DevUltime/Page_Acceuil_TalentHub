@@ -1,0 +1,155 @@
+@import url("../globalSettings/styles.css");
+
+.container {
+    gap: 20px;
+    padding: 0 10px 50px 10px;
+}
+
+.section{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-all-around) rgba(var(--couleur-secondaire), 0.5);
+    min-width: var(--longuer-min);
+}
+.section:hover{
+  box-shadow: var(--shadow-all-around) rgba(var(--couleur-principale), 0.4);
+  transition: 0.3s;
+  transform: translateY(-3px);
+}
+.title-section{
+    color: rgba(var(--couleur-principale), 1);
+    width: 100%;
+    border-bottom: 2px solid rgba(var(--couleur-secondaire), 0.4);
+}
+/*////////section hero//////////*/
+.hero{
+/*    background-image: url("../logo_talenthub.svg") no-repeat center;*/
+ gap: 30px;
+ align-items: center;
+ justify-content: center;
+}
+.hero-info{
+    gap: 10px;
+}
+
+.hero-profession{
+    gap: 5px;
+    font-weight: 500;
+}
+.hero-profession div,
+.hero-profession p{
+    border-left: solid 2px rgba(var(--couleur-secondaire), 0.8);
+    padding-left: 5px;
+}
+.name{
+    font-size: var(--text-principal);
+    color: rgba(var(--couleur-principale), 1);
+    font-weight: bold;
+}
+.pseudo{
+    font-weight: bold;
+    font-size: var(--text-secondaire);
+    color: rgba(var(--couleur-secondaire), 0.6);
+}
+.hero-photo{
+    max-width: 200px;
+}
+.hero-review{
+    padding-bottom: 5px;
+    border-bottom: solid 2px rgba(var(--couleur-principale), 1);
+}
+.hero-action{
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+/*/////////////avis///////////////////*/ 
+.all-avis{
+    margin: 10px;
+    gap: 10px;
+}
+.avis-personel{
+    border: 1px solid rgba(var(--couleur-secondaire), 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+.avis-profil-container{
+    max-width: 50px;
+}
+.avis-content{
+    margin: 5px 0 5px 0;
+}
+.avis-infos{
+    gap: 10px;
+    font-weight: 600;
+}
+.avis-meta{
+    width: 100%;
+    justify-content: space-between;
+    font-size: var(--text-terciaire);
+    font-weight: 700;
+    color: rgba(var(--couleur-secondaire), 0.8);
+}
+.avis-review{
+    align-items: center;
+    justify-content: flex-start;
+}
+/*////////////services////////////////*/
+.service{
+    border: 1px solid rgba(var(--couleur-secondaire), 0.5);
+    padding: 5px;
+    border-radius: 7px;
+}
+.service-img{
+    width: 300px;
+    aspect-ratio: 16 / 9;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+.service-title{
+    font-size: var(--text-principal);
+    font-weight: bold;
+}
+.service-note{
+    font-size: var(--text-principal);
+}
+.service-review{
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 600;
+    
+}
+.all-services{
+    margin: 10px 0 5px 10px;
+    gap: 20px;
+}
+/*////////////portfolio////////////////*/
+.portfolio{
+
+}
+
+.about-textContent{
+    box-shadow: inset var(--shadow-all-around) rgba(121, 116, 116, 0.4);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: var(--text-secondaire);
+    color: rgba(var(--couleur-secondaire), 1);
+    margin-top: 10px;
+    text-align: justify;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.about-languages p,
+.about-skills p{
+    font-size: var(--text-principal);
+    font-weight: bold;
+}
+.about-languages,
+.about-skills{
+    margin: 0 0 10px 10px;
+}
+
+.about-languages-list,
+.about-skills-list{
+    margin: 5px 0 0 40px;
+}

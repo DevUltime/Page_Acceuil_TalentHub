@@ -2,7 +2,7 @@ from rest_framework.generics import ListCreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from .models import Review
 from .serializers import ReviewSerializer 
-from users.models import profil
+from users.models import Profil
 from services.models import Service
 
 class ReviewViewSet(ListCreateAPIView):

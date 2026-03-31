@@ -36,7 +36,6 @@ async function obtainToken(){
         const data = await reponse.json()
         console.log('token recuperee :' + data.access)
         localStorage.setItem('token', data.access)
-        alert(data.access)
         return data.access
     } catch (error) {
     }
@@ -48,7 +47,7 @@ async function profilData(){
         const token = await obtainToken()
         console.log(`token de recuperation ${token}`)
         const getdata = await fetch(url, {
-            method : 'get',
+            method : 'post',
             headers : {'authorization' : 'Bearer ' + token},
         });
         if (!getdata.ok){
@@ -132,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
   default_div();
   showApercus();
   profilData();
-  
+
   //ecouteur pour lenvoie du formulaire de sendModification
   modifier = document.querySelector(".modifier-form")
   if(modifier){
@@ -303,7 +302,7 @@ function MAJservices(){
       all_services.insertAdjacentHTML("beforeend", service);
       const image = document.getElementById(`${id_image}`);
       image.style.backgroundImage = `url("${svcs.photo_service}")`;
-      
+
       //ajout de la note
       note_div = document.getElementById(`${new_id}`)
       if (note_div){
@@ -442,7 +441,7 @@ function showModifier(){
     }else{
         console.log("le conteneur modifier na pas ete teouvé")
     }
-    
+
 }
 function showApercus(){
     apercus = document.querySelector(".profil-input")
@@ -473,4 +472,3 @@ function unShow(element, flex){
         console.log(`${element_to_show} n'a pas été trouvé`)
     }
 }
-

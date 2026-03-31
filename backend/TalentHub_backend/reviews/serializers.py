@@ -6,7 +6,7 @@ from .models import Review
 User = get_user_model()
 
 class ReviewSerializer(serializers.ModelSerializer):
-    reviewer = serializers.PrimaryKeyRelatedField(queryset = User.objects.all())
+    reviewer = serializers.SlugRelatedField(queryset = User.objects.all(), slug_field = 'email')
     service = serializers.PrimaryKeyRelatedField(queryset = Service.objects.all())
     
     class Meta: 

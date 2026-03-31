@@ -18,22 +18,22 @@ class UserViewSet(ListCreateAPIView):
     def perform_create(self, serializer):
         return serializer.save(id = self.request.user.id)
         
-class ProfilViewSet(ListCreateAPIView):
+class ProfilViewSet(ModelViewSet):
     serializer_class = ProfilSerializer
     permission_classes = [IsAuthenticated]
     
     def get_queryset(self):
         return Profil.objects.filter(user= self.request.user)
     
-    #def get_object(self):
-        #return Profil.objects.get(user= self.request.user)
+    def get_object(self):
+        return Profil.objects.get(user= self.request.user)
     
     def perform_create(self, serializer):
         return serializer.save(user = self.request.user)
     
-    #def perform_update(self, serializer):
-        #user = self.request.user
-        #return serializer.save(user = user)
+    def perform_update(self, serializer):
+        user = self.request.user
+        return serializer.save(user = user)
         
 class SkillViewSet(ListCreateAPIView):
     serializer_class = SkillSerializer

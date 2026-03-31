@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../globalSettings/styles.css">
+    <link rel="stylesheet" href="../components/etoile/etoile.css">
+    <title>profil</title>
+</head>
+
+<body>
+    <main class="container flex-column">
+        <section class="hero  flex-row">
+            <div class="hero-photo profil">
+                <img src="profil.jpg" alt="profil" />
+            </div>
+            <div class="hero-info flex-column">
+                
+                <div class="hero-indentity">
+                    <h1 class="name">Tamo Eleonor</h1>
+                    <span class="pseudo">@designMaster</span>
+                </div>
+                
+                <div class="hero-review">
+                    <span>
+                        <span class="ratting">4.5</span>
+                        (<span class="avis">500</span> avis)
+                    </span>
+                </div>
+                
+                <div class="hero-profession flex-row">
+                    <span class="profession">designer graphique</span>
+                    <p class="experience">5 <span>ans d'experience</span></p>
+                    <div class="localisation">
+                            <span class="city">douala</span>
+                            <span class="country">Cameroun</span>
+                    </div>
+                </div>
+                
+                <div class="hero-action flex-row">
+                    <button class="btn-good">comander</button>
+                    <button class="btn-bad">contacter</button>
+                </div>
+            </div>
+        </section>
+        
+        <!--template pour les service -->
+        <template id="service-template" class="flex-column">
+            <div class="service flex-column">
+                <div class="service-img"></div>
+            <p class="service-title"></p>
+            <div class="service-review flex-row">
+                <p class="service-note"></p>
+                <span class="service-star"></span>
+                (<span class="service-avis">100</span> avis)
+            </div>
+      
+            <div class="service-meta">
+                <p>a partir de: <span class="service-prix"></span></p>
+                <p>livrée en : <span class="service-delivery"></span></p>
+            </div>
+            
+            </div>
+        </template>
+        
+        <section class="services section">
+                <h2 class="title-section">Services</h2>
+                <div class="all-services flex-row">
+                    
+                </div>
+        </section>
+        <section class="portfolio section">
+                <h2 class="title-section">Portfolio</h2>
+        </section>
+        
+        <!--template pour les avis --> 
+        <template id="avis-template">
+            <div class="avis-personel">
+                    <div class="avis-infos flex-row">
+                        <div class="avis-profil-container profil">
+                                <img src="" alt="avis-profil">
+                        </div>
+                        <div class="flex-column">
+                            <p class="avis-name"></p>
+                            <p class="avis-review flex-row"><span class="avis-note"></span> <span class="avis-star"></span></p>
+                        </div>
+                    </div>
+                    <p class="avis-content"></p>
+                    <div class="avis-meta flex-row">
+                            <p class="avis-localisation"></p>
+                            <p class="avis-date"></p>
+                    </div>
+            </div>
+        </template>
+        <section class="reviews section">
+            <h2 class="title-section">Avis</h2>
+            <div class="all-avis flex-column"></div> 
+        </section>
+        <section class="about section">
+            <h2 class="title-section">À propos</h2>
+            <p class="about-textContent">
+                je suis un developpeur web fullstack speciliste des technologie tel que html, css, js coté frontend et django coté server   
+                .avec une experience professionel de 10 ans, je suis un peu plus que sur que je saurai repondre a tout vos besoin de developpement web de tout genre
+            </p>
+            
+            <div class="about-languages">
+                    <p>langues:</p>
+                    <ul class="about-languages-list">
+                        <li>francais (intermediare)</li>
+                        <li>anglais (professionel)</li>
+                    </ul>
+            </div>
+            
+            <div class="about-skills">
+                <p>skills:</p>
+                <ul class="about-skills-list">
+                    <li>html/css</li>
+                    <li>django</li>
+                </ul>    
+            </div>
+        </section>
+
+    </main>
+<script src='main.js' type="module"></script>
+<script src='services.js' type="module"></script>
+<script src='avis.js' type="module"></script>
+<script src='../globalSettings/main.js' type="module"></script>
+</body>
+
+</html> 

@@ -125,16 +125,6 @@ menu-list{
     font-size: var(--text-secondaire);
 }
 
-.etoile svg,
-.demi_etoile svg {
-  color: rgba(255, 215, 0, 1);
-  fill: rgba(255, 215, 0, 1);
-  width: 12px;
-}
-
-.etoiles {
-  justify-content: center;
-}
 .modal{
 	justify-content: space-between;
 	align-items: center;
@@ -142,7 +132,7 @@ menu-list{
 	margin: 10px auto 10px auto;
 	padding: 10px;
 	border-radius: 10px;
-	z-index: 1000000;
+	z-index: 1000;
 	position: fixed;
 	top : 0px;
 	right: 50%;
@@ -172,3 +162,14 @@ menu-list{
 	}
 }
 
+.default {
+  height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgba(var(--couleur-principale), 1);
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+}

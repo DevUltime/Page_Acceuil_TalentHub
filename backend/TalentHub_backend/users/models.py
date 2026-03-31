@@ -53,7 +53,7 @@ class Profil(models.Model):
     experience = models.IntegerField(default = 0)
     impressions = models.IntegerField(default = 0)
     clicks = models.IntegerField(default = 0)
-    languages = models.ManyToManyField(Language, blank = True, null = True)
+    languages = models.ManyToManyField(Language, blank = True)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     

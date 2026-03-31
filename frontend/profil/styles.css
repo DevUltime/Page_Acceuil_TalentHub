@@ -43,17 +43,7 @@
     font-weight: bold;
     color: rgba(var(--couleur-secondaire), 1);
 }
-.default {
-  height: 100%;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: rgba(var(--couleur-principale), 1);
-  border: 1px solid;
-  padding: 10px;
-  margin: 10px;
-}
+
 .info{
   font-weight: bold;
   color: rgba(var(--couleur-principale), 1);

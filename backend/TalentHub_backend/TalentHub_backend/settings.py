@@ -130,3 +130,6 @@ CORS_ALLOWED_ORIGIN = [ "http://localhost:8000", "http://127.0.0.1:8000" ]
 
 #configuration chanells 
 
+#configuration media
+MEDIA_URL = '/images/'
+MEDIA_ROOT = BASE_DIR / 'images'

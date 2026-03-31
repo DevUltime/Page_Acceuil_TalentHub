@@ -1,14 +1,7 @@
 console.log("Hello world!");
 
-document.addEventListener("DOMContentLoaded", function() {
-    MAJmessage();
-    openChat();
-    showMenu();
-});
-
-//demo de remplissage de la section contact, qui sera plus tard remplie par les données de la base de données via le backend
-
 const contacts = [
+	
     {
         photo: "contact1.png",
         nom: "Jean Dupont",
@@ -27,11 +20,42 @@ const contacts = [
         message: "Bonjour, je suis un grand fan de votre travail. Puis-je vous contacter ?",
         date: "2024-06-01 12:00"
     }
+    
 ]
+document.addEventListener("DOMContentLoaded", function() {
+	showDefaultMessage()
+	MAJContacts()
+	MAJMessageScreen()
+});
+function defaultContact(){
+	const contact_section = document.getElementById("section-contact")
+	const default_contacts = document.createElement("div")
+	default_contacts.className = "default"
+	default_contacts.innerHTML = `
+	<p>pas de contact</p>
+	`;
+	contact_section.appendChild(default_contacts)
+}
+function defaultMessage(){
+	const chat_section = document.getElementById("section-chat")
+	document.querySelector(".chat-header").style.display = "none";
+	document.querySelector(".chat-input").style.display = "none";
+	document.querySelector(".chat-messages").style.display = "none";
+	const default_contacts = document.createElement("div");
+	default_contacts.className = "default messages-default"
+	default_contacts.innerHTML = `
+	<p>pas de chat ouvert</p>
+	`;
+	chat_section.appendChild(default_contacts);
+}
 
-function MAJmessage() {
+function MAJContacts() {
     const all_contacts = document.querySelector(".contact-list");
-    if (all_contacts) {
+    nbr_contacts = contacts.length
+    if (nbr_contacts < 1){
+    	defaultContact()
+    }else{
+    	if (all_contacts) {
         all_contacts.innerHTML = "";
         contacts.forEach((contact) => {
             const contact_element = document.createElement("div");
@@ -54,17 +78,21 @@ function MAJmessage() {
             `;
             all_contacts.appendChild(contact_element);
     });
-    }else {
-        console.error("Le conteneur de contacts n'a pas été trouvé.");
+        }else {
+            console.error("Le conteneur de contacts n'a pas été trouvé.");
+        }
     }
 }
 
+function MAJMessageScreen(){
+	fillChatHeaderEvent()
+}
+
 function fillChatHeader(contact) {
-    console.log("Ouvrir le chat avec " + contact.nom);
     const  info_header = document.querySelector(".chat-header-info")
     if (info_header) {
         info_header.innerHTML = `
-            <span class="chat-close" onclick="closeChat()">
+            <span class="chat-close" onclick="closeChat()" >
                     <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -93,24 +121,46 @@ function fillChatHeader(contact) {
         console.error("Le conteneur de l'en-tête du chat n'a pas été trouvé.");
     }
 }
-
-function openChat() {
+function fillChatHeaderEvent() {
     const contact_elements = document.querySelectorAll(".contact-particulier");
     contact_elements.forEach((element) => {
         element.addEventListener("click", function() {
-            document.querySelector(".section-contact").style.display = "none";
-            document.querySelector(".section-chat").style.display = "block";
+        	document.querySelector(".messages-default").style.display = "none";
+        	document.querySelector(".chat-header").style.display = "flex";
+	        document.querySelector(".chat-input").style.display = "flex";
+	        document.querySelector(".chat-messages").style.display = "flex";
+        	widthScreen = window.innerWidth
+	        if (widthScreen < 780){
+	        	document.querySelector(".section-contact").style.display = "none";
+	        	document.querySelector(".section-chat").style.display = "block";
+        	}
             index = Array.from(contact_elements).indexOf(element);
             fillChatHeader(contacts[index]);
         });
     });
 }
-
 function closeChat() {
-    document.querySelector(".section-chat").style.display = "none";
-    document.querySelector(".section-contact").style.display = "block";
+	widthScreen = window.innerWidth
+	if (widthScreen > 780){
+		const default_message = document.querySelector(".messages-default")
+		default_message.remove()
+		defaultMessage()
+		//document.querySelector(".messages-default").style.display = "flex"
+	}else{
+		    document.querySelector(".section-contact").style.display = "block";
+            document.querySelector(".section-chat").style.display = "none";
+	}
 }
 
+function showDefaultMessage(){
+	const msgHeader = document.querySelector(".chat-header-info")
+	const enfant = msgHeader.children.length;
+	if (enfant === 0){
+		defaultMessage()
+	}
+}
+
+/*
 function showMenu(){
     let show = "true";
     const menu_element = [
@@ -143,11 +193,5 @@ function showMenu(){
     });
 }
 
-function afficherMessage(message){
-    msg_content = document.createElement("div")
-    msg_content.className = "message-particulier"
-    msg_content.innerHTML = `
-    <div class="msg_text">${message.content}</div> 
-    <div class="msg_time"></div>
-    `
-}
+
+*/
