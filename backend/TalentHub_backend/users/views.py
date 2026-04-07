@@ -16,7 +16,7 @@ class UserViewSet(ListCreateAPIView):
         return User.objects.filter(id = self.request.user.id)
         
     def perform_create(self, serializer):
-        return serializer.save(id = self.request.user.id)
+        return serializer.save()
         
 class ProfilViewSet(ModelViewSet):
     serializer_class = ProfilSerializer
@@ -24,9 +24,6 @@ class ProfilViewSet(ModelViewSet):
     
     def get_queryset(self):
         return Profil.objects.filter(user= self.request.user)
-    
-    def get_object(self):
-        return Profil.objects.get(user= self.request.user)
     
     def perform_create(self, serializer):
         return serializer.save(user = self.request.user)
@@ -73,7 +70,7 @@ class AllUsersViewSet(ModelViewSet):
     def get_queryset(self): 
         return User.objects.all()
         
-    def get_object(self): 
-        return User.objects.get(id = self.request.user.id)
+    #def get_object(self): 
+        #return User.objects.get()
         
         

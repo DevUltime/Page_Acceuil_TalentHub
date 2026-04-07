@@ -6,7 +6,7 @@ app_name = "apiUser"
 
 urlpatterns = [ 
     
-    path('profil/', 
+    path('me/profil/', 
     views.ProfilViewSet.as_view({
         'get' : 'list',
         'post' : 'create',

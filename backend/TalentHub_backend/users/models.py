@@ -31,10 +31,12 @@ class Language(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
     
 class Profil(models.Model):
+    
     ROLE_CHOICES = (
         ('client', 'Client'),
         ('freelancer', 'Freelancer'),
     )
+    
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     bio = models.TextField(blank = True, null=True)
     pseudo = models.CharField(max_length = 25, default = "devUltime")
@@ -44,11 +46,7 @@ class Profil(models.Model):
     role = models.CharField(max_length = 20 , choices = ROLE_CHOICES)
     country = models.CharField(max_length = 25, default = "Cameroun")
     city = models.CharField(max_length = 25, default = "Dschang")
-    facebook = models.CharField(max_length = 25, default = "bisournous")
-    linkdin = models.CharField(max_length = 25, default = "bisournous")
-    instagramm = models.CharField(max_length = 25, default = "bisournous")
     telephone = models.CharField(max_length = 25, default = "+237 640499175")
-    whatsapp = models.CharField(max_length = 25, default = "+237 640499175")
     profession = models.CharField(max_length = 25, default = "bandit")
     experience = models.IntegerField(default = 0)
     impressions = models.IntegerField(default = 0)

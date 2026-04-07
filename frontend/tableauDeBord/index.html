@@ -1,4 +1,223 @@
-<!DOCTYPE
+<!doctype html>
 <html>
+    <header>
+        <meta charset="Utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>dashbord</title>
+    </header>
+    <body>
+        <main class="flex-column">
+            <section class="hero flex-row section-container">
+                <div class="hero-photo profil">
+                    <img src="../assets/pictures/profil.jpg" alt="profil" />
+                </div>
+                <div class="hero-info flex-column">
+                    <div class="hero-indentity">
+                        <h1 class="name">Tamo Eleonor</h1>
+                        <span class="pseudo">@designMaster</span>
+                    </div>
 
+                    <div class="hero-review">
+                        <span>
+                            <span class="ratting">4.5</span>
+                            (<span class="avis">500</span> avis)
+                        </span>
+                    </div>
+
+                    <div class="hero-profession flex-row">
+                        <span class="profession">designer graphique</span>
+                        <p class="experience">
+                            5 <span>ans d'experience</span>
+                        </p>
+                        <div class="localisation">
+                            <span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path
+                                        d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z"
+                                    />
+                                    <path
+                                        d="M18 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 .601.2"
+                                    />
+                                    <path d="M18 22v-3" />
+                                    <circle cx="10" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            <span class="city">douala</span>
+                            <span class="country">Cameroun</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--section des commandes -->
+            <section class="orders section-container">
+                <p class="section-title">commande</p>
+
+                <div class="order-stats flex-row">
+                    <div class="stats-card flex-row">
+                        <p>toutes les comandes</p>
+                        <span></span>
+                        <h2 class="all-orders-value">0</h2>
+                    </div>
+                    <div class="stats-card flex-row">
+                        <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M12 6v6l4 2" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg>
+                        </span>
+                        <p>commande en cours</p>
+                        <h2 class="progress-order-value">0</h2>
+                    </div>
+                    <div class="stats-card flex-row">
+                        <p>commande rejeter</p>
+                        <span></span>
+                        <h2 class="rejected-order-value">0</h2>
+                    </div>
+
+                    <div class="stats-card flex-row">
+                        <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M18 6 7 17l-5-5" />
+                                <path d="m22 10-7.5 7.5L13 16" />
+                            </svg>
+                        </span>
+                        <p>commande livrée</p>
+                        <h2 class="check-order-value">0</h2>
+                    </div>
+                </div>
+
+                <div class="recent-order">
+                    <h2>commande recentes</h2>
+                </div>
+            </section>
+            
+            <!--section des messages -->
+            <section class="chat section-container">
+                <p class="section-title">Messages</p>
+                <div class="unread-msg flex-row">
+                    <span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                        </svg>
+                    </span>
+                    <p>message non lues:</p>
+                    <span class="unread-msg-value">0</span>
+                </div>
+                <div class="recent-msgs">
+                    <h2>message recents</h2>
+                    
+                    <!--template pour les message -->
+                    <template class="recent-msg-tmpl">
+                        <div class="recent-msg">
+                            <div class="recent-msg-profil profil">
+                                <img src="" alt="recent-msg-profil" />
+                            </div>
+                            <div class="recent-msg-meta">
+                                <div class="recent-msg-infos">
+                                    <h2 class="pseudo"></h2>
+                                    <p class="recent-msg-date"></p>
+                                </div>
+                                <p class="recent-msg-content"></p>
+                            </div>
+                        </div>
+                    </template>
+                    
+                    <div class="recent-msg flex-row">
+                        <div class="recent-msg-profil profil">
+                            <img src="contact1.png" alt="recent-msg-profil" />
+                        </div>
+                        <div class="recent-msg-meta flex-column">
+                            <div class="recent-msg-infos flex-row">
+                                <h2 class="pseudo">theophile</h2>
+                                <p class="recent-msg-date">12-avr-2000 22:00</p>
+                            </div>
+                            <p class="recent-msg-content">
+                                bonjoiur jai henvie de te laisser un message
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!--section des services -->
+            <section class="services section-container">
+                <template id="service-template" class="flex-column">
+                    <div class="service flex-column">
+                        <div class="service-img"></div>
+                        <p class="service-title"></p>
+                        <div class="service-review flex-row">
+                            <p class="service-note"></p>
+                            <span class="service-star"></span>
+                            (<span class="service-avis">100</span> avis)
+                        </div>
+
+                        <div class="service-meta">
+                            <p>
+                                a partir de: <span class="service-prix"></span>
+                            </p>
+                            <p>
+                                livrée en :
+                                <span class="service-delivery"></span>
+                            </p>
+                        </div>
+                    </div>
+                </template>
+                <p class="section-title">services</p>
+                <div class="all-services flex-row"></div>
+                <button class="btn-bad">plus de details</button>
+            </section>
+            
+            <!--section des revenus -->
+            <section class="section-container">
+                <p class="section-title">revenus</p>
+            
+            </section>
+        </main>
+        <script src="main.js"></script>
+        <script src="../components/etoile/etoile.js" type="module"></script>
+        <script src="servicesDashbord.js" type="module"></script>
+    </body>
 </html>

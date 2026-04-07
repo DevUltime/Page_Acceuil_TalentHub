@@ -1,0 +1,26 @@
+@import url("../../globalSettings/styles.css");
+.header-content{
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    color: rgba(var(--couleur-principale), 1);
+    box-shadow: var(--shadow-bottom) rgba(var(--couleur-secondaire), 0.4);
+}
+.header-content div:first-child{
+    align-items: center;
+    gap: 20px; 
+}
+.app-meta{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.name-app{
+    font-size: var(--text-principal);
+}
+.logo-container{
+    width: 70px;
+}

@@ -1,6 +1,7 @@
-import { afficherModal } from "../globalSettings/main.js";
+import { afficherModal } from '../globalSettings/main.js'
+import { createUser } from '../api/userApi.js'
 //chargement du DOM
-
+alert("bonjour")
 document.addEventListener("DOMContentLoaded", () => {
     createUser();
 });
