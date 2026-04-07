@@ -122,7 +122,7 @@
     bottom: 0px;
     left: 0;
     width: 0px;
-    transition: width 0.1s ease;
+    transition: width 0.2s ease;
     content: "";
     background-color:rgba(var(--couleur-principale), 1); 
     height: 2px;
