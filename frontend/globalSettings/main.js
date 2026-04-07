@@ -49,7 +49,6 @@ function afficherDefault(element, text, icon){
 	<p>${text}</p>
 	`;	
 }
-console.log("bonjour")
 
 export function note_etoile(nbr_etoile){
   const etoile = document.createElement("span")
