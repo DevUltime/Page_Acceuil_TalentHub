@@ -1,12 +1,6 @@
 import { afficherModal } from "../globalSettings/main.js";
 import { getToken } from "../api/userApi.js";
 import { CONFIG } from "../api/config.js";
-import { renderHeader, createHeader } from '../components/header/header.js'
-
-document.addEventListener('DOMContentLoaded', function(){
-    renderHeader(".true-header", createHeader());
-});
-
 
 /*
 //clic sur le logo talentHub
@@ -19,7 +13,6 @@ logo.addEventListener("click", ()=>{
 */
 document.addEventListener('DOMContentLoaded', function(){
     loginForm();
-    renderHeader(".true-header", createHeader());
     verifyConexion();
 });
 
