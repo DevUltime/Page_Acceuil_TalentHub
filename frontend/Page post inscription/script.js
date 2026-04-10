@@ -1,3 +1,9 @@
+import { renderHeader, createHeader } from '../components/header/header.js'
+
+document.addEventListener('DOMContentLoaded', function(){
+    renderHeader(".true-header", createHeader());
+});
+
 //activation de la side bar
 
 const aside = document.querySelector('aside'),

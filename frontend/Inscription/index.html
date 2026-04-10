@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,43 +40,182 @@
         </form>
     </div>
 
-
-
-    <main>
-        <section>
-            <div class="informations">
-                <h2>Créer un Compte</h2>
-                <form action="http://localhost:8000/apiUser/user/" method="POST" id="register_form">
-                    <label for="nom">Nom: </label>
-                    <input type="text" name="nom" id="nom">
-                    <label for="nom">Prenom: </label>
-                    <input type="text" name="prenom" id="prenom">
-                    <label for="mail"> adresse email</label>
-                    <input type="email" name="mail" id="email" required>
-                    <label for="phone"> Tel:</label>
-                    <input type="tel" name="phone" id="phone" required>
-                    <label for="mot_passe">mot de passe: </label>
-                    <input type="password" name="mot_passe" id="mot_passe_register" required>
-                    <input type="submit" value="s'inscrire">
-                </form>
-                <div class="policy">
-                    <a href="#">termes du service</a>
-                    <a href="#"> police de confidentialité</a>
+        <main>
+            <section>
+                <div class="informations">
+                    <h2>Créer un Compte</h2>
+                    <form class="flex-column"
+                        action="http://localhost:8000/apiUser/user/"
+                        method="POST"
+                        id="register_form"
+                    >
+                        <div class="input-group">
+                            <label for="nom" class="flex-row"
+                                ><span
+                                    ><svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path
+                                            d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+                                        />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                </span>
+                                <p>Nom:</p></label
+                            >
+                            <input type="text" name="nom" id="nom" />
+                        </div>
+                        <div class="input-group">
+                            <label for="nom" class="flex-row"
+                                ><span
+                                    ><svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path
+                                            d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+                                        />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                </span>
+                                <p>Prenom:</p></label
+                            >
+                            <input type="text" name="prenom" id="prenom" />
+                        </div>
+                        <div class="input-group">
+                            <label for="mail" class="flex-row"
+                                ><span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path
+                                            d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                                        />
+                                        <rect
+                                            x="2"
+                                            y="4"
+                                            width="20"
+                                            height="16"
+                                            rx="2"
+                                        />
+                                    </svg>
+                                </span>
+                                <p>email:</p></label
+                            >
+                            <input
+                                type="email"
+                                name="mail"
+                                id="email"
+                                required
+                            />
+                        </div>
+                        <div class="input-group">
+                            <label for="phone" class="flex-row">
+                                <span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path d="M13 2a9 9 0 0 1 9 9" />
+                                        <path d="M13 6a5 5 0 0 1 5 5" />
+                                        <path
+                                            d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                                        />
+                                    </svg>
+                                </span>
+                                <p>Tel:</p></label
+                            >
+                            <input
+                                type="tel"
+                                name="phone"
+                                id="phone"
+                                required
+                            />
+                        </div>
+                        <div class="input-group">
+                            <label class="flex-row" for="mot_passe"
+                                ><span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <rect
+                                            width="18"
+                                            height="11"
+                                            x="3"
+                                            y="11"
+                                            rx="2"
+                                            ry="2"
+                                        />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                    </svg>
+                                </span>
+                                <p>mot de passe:</p></label
+                            >
+                            <input
+                                type="password"
+                                name="mot_passe"
+                                id="mot_passe_register"
+                                required
+                            />
+                        </div>
+                        <input type="submit" value="s'inscrire" />
+                    </form>
+                    <div class="policy">
+                        <a href="#">termes du service</a>
+                        <a href="#"> police de confidentialité</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>©️2026 TalentHub Tous droits reservés</p>
-        <nav>
-            <a href="#">contactez-nous</a>
-            <a href="#">à propos de nous</a>
-            <a href="#">support</a>
-        </nav>
-    </footer>
-    <script src="scriptInscription.js" defer type="module"></script>
-    <script src="../api/userApi.js" type="module" ></script>
-    <script src="../api/config.js" type="module" ></script>
-    <script src="../globalSettings/main.js" type="module"></script>
-</body>
+            </section>
+        </main>
+        <footer>
+            <p>©️2026 TalentHub Tous droits reservés</p>
+            <nav>
+                <a href="#">contactez-nous</a>
+                <a href="#">à propos de nous</a>
+                <a href="#">support</a>
+            </nav>
+        </footer>
+        <script src="scriptInscription.js" defer type="module"></script>
+        <script src="../api/userApi.js" type="module"></script>
+        <script src="../api/config.js" type="module"></script>
+        <script src="../globalSettings/main.js" type="module"></script>
+    </body>
 </html>

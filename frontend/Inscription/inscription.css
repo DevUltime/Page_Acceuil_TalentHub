@@ -1,3 +1,5 @@
+@import url("/frontend/globalSettings/styles.css");
+
 *{
     padding: 0;
     margin: 0;
@@ -149,7 +151,7 @@ section{
 
 /*  box contenant les informations */
 .informations{
-    height: 410px;
+    /*height: 410px;*/
     width: 280px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px rgb(195, 195, 195);
@@ -164,27 +166,41 @@ section{
     margin-bottom: 10px;
 }
 form{
-    display: flexbox;
-    flex-direction: row;
+    gap: 10px;
+}
+
+.input-group:focus-within{
+    color: rgba(var(--couleur-principale), 1);
+    font-weight: var(--fw-medium);
 }
 input{
-    padding: 0 7px 0 7px;
+    outline: none;
+    padding: 7px;
     appearance: none;
     width: 100%;
     margin: 5px 0;
-    height: 27px;
     border: 1px solid rgb(195, 195, 195);
     border-radius: 6px;
-    transition: all .3s ease;
+    transition: all 0.5s ease;
 }
 input:focus{
-    outline: none;
     box-shadow: .5px .5px 5px  rgba(80, 181, 232,0.5);
     border: none;
 }
 label{
     font-size: 12px;
     text-transform: capitalize;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    font-weight: var(--fw-normal);
+    font-size: var(--text-base); 
+    transition: 0.5s;
+    font-weight: var(--fw-semibold);
+}
+label p{
+   font-weight: var(--fw-normal);
+   font-size: var(--text-base); 
 }
 input[type="submit"]{
     margin-top: 10px;

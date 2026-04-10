@@ -32,7 +32,36 @@ class SkillSuggestionSerializer(serializers.ModelSerializer):
         fields = ["id", "name", "created_by", "is_approved"]
         
 class UserSerializer(serializers.ModelSerializer): 
+    password = serializers.CharField(write_only = False, required = True)
     class Meta:
         model = User
-        fields = "__all__"
+        fields = [
+            'id', 'email', 'password', 'first_name', 'last_name', 
+            'phone', 'email_verified', 'is_active', 'is_staff', 
+            'is_superuser', 'date_joined', 'created_at', 
+            'groups', 'user_permissions', 'password'
+        ]
+        
+    def create(self, validated_data):
+        """Utilise le Manager personnalisé pour hasher le password"""
+        password = validated_data.pop('password')
+        
+        user = User.objects.create_user(
+            password=password,
+            **validated_data
+        )
+        return user
+    
+    def update(self, instance, validated_data):
+        """Hash le mot de passe si présent lors de la mise à jour"""
+        password = validated_data.pop('password', None)
+        
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        
+        if password:
+            instance.set_password(password)
+        
+        instance.save()
+        return instance
  

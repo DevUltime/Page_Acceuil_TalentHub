@@ -1,4 +1,12 @@
 import { afficherModal } from "../globalSettings/main.js";
+import { getToken } from "../api/userApi.js";
+import { CONFIG } from "../api/config.js";
+import { renderHeader, createHeader } from '../components/header/header.js'
+
+document.addEventListener('DOMContentLoaded', function(){
+    renderHeader(".true-header", createHeader());
+});
+
 
 /*
 //clic sur le logo talentHub
@@ -11,6 +19,8 @@ logo.addEventListener("click", ()=>{
 */
 document.addEventListener('DOMContentLoaded', function(){
     loginForm();
+    renderHeader(".true-header", createHeader());
+    verifyConexion();
 });
 
 //animation du menu hamburger
@@ -41,34 +51,16 @@ async function loginForm(){
     	
         login_form.addEventListener("submit", async (e) => {
             e.preventDefault()
-            const email = document.getElementById("email").value
-            const password = document.getElementById("mot_passe").value
-            try {
-                const  requette = await fetch(login_form.action, {
-                   method : login_form.method, 
-                   headers : {
-                       'Content-Type' : 'application/json'
-                   },
-                   body : JSON.stringify({
-                       email : email,
-                       password : password,
-                   }), 
-                });
-                
-                if (!requette.ok){
-                    throw new Error(requette.status + " " + requette.statusText);
-                }else{
-                    const text = `${email} authentifier avec success`;
-                    afficherModal(text);
-                    let connexionPage = document.querySelector(".connexion_page");
-                    connexionPage.classList.toggle("connexionPage");
-                }
-                const requetteData = await requette.json()
-                console.log(requetteData.access)
-                localStorage.setItem("token", requetteData.access)
-            } catch (error) {
-              afficherModal(error);
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("mot_passe").value;
+            
+            const data = {
+                email: email,
+                password : password,
             }
+            const reponse = await getToken(data)
+            
+            afficherModal(reponse)
         })
     }else{
         alert(`${login_form} non trouvé`)
@@ -77,3 +69,12 @@ async function loginForm(){
 }
 
 
+function verifyConexion() {
+    const token = localStorage.getItem("token") || null;
+    
+    if (token){
+        window.location.href = (`/frontend/Page post inscription`)
+    }else{
+        afficherModal("vous netes pas connecter");
+    }
+}

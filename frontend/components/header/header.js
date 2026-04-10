@@ -1,7 +1,7 @@
 export function createHeader(user) {
 const header = `
 <div class="header-app flex-row">
-   ${user ?  `<span class="header-menu">
+   ${user ?  `<span class="hd-menu">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 5h16" />
@@ -20,7 +20,7 @@ ${user ? `<div class="hd-search">
     <span class="material-symbols-outlined btn-rechercher">search</span>
     <input type="search" placeholder="Trouver un Talent">
 </div>
-<nav class="flex-row">` : ""}
+<nav class="flex-row hd-nav">` : ""}
 
     ${user ? `<a  class="hd-notification">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -38,9 +38,9 @@ ${user ? `<div class="hd-search">
             <rect x="2" y="4" width="20" height="16" rx="2" />
         </svg>
     </a>  
-    <div class="join_us">
+    <button class="join_us btn-full">
         <a href="#">Join Us</a>
-    </div>` : 
+    </button>` : 
     `<ul class="register-action  flex-row" >
         <li><a href="/frontend/acceuil/index.html">acceuil</a></li>
         <li><a href="../Inscription/index.html">inscription</a></li>

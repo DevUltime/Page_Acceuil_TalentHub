@@ -18,10 +18,11 @@ export async function getToken(data) {
 		}
 		const reponse =  await request.json();
 //		alert(reponse.access);
-		return reponse.access;
+        localStorage.setItem("token", reponse.access)
+		return `${data.email} authentifié avec succes`;
 		
 	} catch (error) {
-	  alert("erreur de token: " + error);
+	  return (error);
 	}
 }
 
@@ -48,7 +49,6 @@ export async function getUser(token) {
 }
 
 export async function createUser(data) {
-
     try {
         const request = await fetch(`${CONFIG.API_BASE_URL}/apiUser/user/`, {
             method : 'post',
@@ -60,10 +60,9 @@ export async function createUser(data) {
         if (!request.ok) {
             throw new Error(request.status + " " + request.statusText);
         }
-        const reponse = await request.json();
-        afficherModal(reponse)
+        return ` ${data.email} authentifié avec success`;
     } catch (err) {
-        afficherModal(err);
-        
+        return err;
     }
 }
+

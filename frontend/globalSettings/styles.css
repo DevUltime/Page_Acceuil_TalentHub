@@ -54,8 +54,7 @@ main{
 svg {
   width: 25px;
   height: 25px;
-  color: rgba(var(--couleur-principale), 1);
-  stroke-width: 2.2px;
+  stroke-width: 1.5px;
 }
 img{
     width: 100%;
@@ -85,6 +84,9 @@ img{
 .btn-full{
     background: rgba(var(--couleur-principale), 1);
     color: white;
+    min-width: auto;
+    border-radius: 20px;
+    padding: 0px 10px 0 10px;
 }
 
 .flex-row{

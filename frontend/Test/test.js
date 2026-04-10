@@ -13,9 +13,9 @@ const data = {
 	password : "123456",
 };
 const dataUser = {
-    email : "hz1@gmail.com",
-    password : "hz1",
-    phone : "hz1",
+    email : "hz4@gmail.com",
+    password : "hz2",
+    phone : "hz4",
 }
 
 const user = {
@@ -25,8 +25,15 @@ const user = {
 
 /*const token = await getToken(data);
 //getProfil(token);
-//getUser(token);
-createUser(dataUser);*/
+//getUser(token);*/
+
+async function testUser() {
+    const response = await createUser(dataUser);
+    afficherModal(response);
+}
+
+testUser();
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
